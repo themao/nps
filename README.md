@@ -1,3 +1,4 @@
-## Django project for NasosPromService Ltd.
+nps
+===
 
-Just source files for the company website
+A Symfony project created on February 13, 2016, 5:34 pm.
