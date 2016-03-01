@@ -1,0 +1,6 @@
+services:
+    admin.production:
+            class: AppBundle\Admin\ProductionAdmin
+            arguments: [~, 'AppBundle\Entity\Production', ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, group: 'Content', label: 'Production' }
