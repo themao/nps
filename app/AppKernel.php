@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             // generated Application bundles
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
         );
