@@ -25,7 +25,9 @@
         "sonata-project/doctrine-orm-admin-bundle": "^2.3",
         "sonata-project/easy-extends-bundle": "^2.1",
         "sonata-project/user-bundle": "^2.2",
-        "stof/doctrine-extensions-bundle": "^1.2"
+        "stof/doctrine-extensions-bundle": "^1.2",
+        "a2lix/i18n-doctrine-bundle": "^0.1.0",
+        "a2lix/translation-form-bundle": "^2.1"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

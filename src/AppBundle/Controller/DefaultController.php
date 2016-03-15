@@ -9,7 +9,8 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction(Request $request)
     {
@@ -17,5 +18,22 @@ class DefaultController extends Controller
         return $this->render('default/index.html.twig', array(
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ));
+    }
+
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function translationAction(Request $request)
+    {
+        $productionRepo = $this->get('doctrine')->getRepository('AppBundle:Production');
+        $productionList = $productionRepo->findAll();
+
+        return $this->render(
+            'AppBundle:Default:translation.html.twig',
+            [
+                'productionList' => $productionList
+            ]
+        );
     }
 }

@@ -16,7 +16,6 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
-            // Sonata Admin
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
@@ -26,7 +25,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-            // generated Application bundles
+            new A2lix\TranslationFormBundle\A2lixTranslationFormBundle(),
+            new A2lix\I18nDoctrineBundle\A2lixI18nDoctrineBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
         );
 

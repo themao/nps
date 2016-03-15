@@ -74,6 +74,12 @@ doctrine:
             softdeleteable:
                 class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
                 enabled: true
+            oneLocale:
+                class: A2lix\I18nDoctrineBundle\Doctrine\ORM\Filter\OneLocaleFilter
+                enabled: true
+
+a2lix_i18n_doctrine:
+    manager_registry: doctrine
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -105,3 +111,10 @@ stof_doctrine_extensions:
         default:
             translatable: true
             timestampable: true
+
+a2lix_translation_form:
+    locale_provider: default
+    locales: [en, ua, ru]
+    default_locale: en
+    manager_registry: doctrine
+    templating: "A2lixTranslationFormBundle::default.html.twig"

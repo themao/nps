@@ -20,6 +20,7 @@ class Production implements Translatable
 {
     use TimestampableEntity;
     use SoftDeleteableEntity;
+    use \A2lix\I18nDoctrineBundle\Doctrine\ORM\Util\Translatable;
 
     /**
      * @var int
@@ -30,39 +31,11 @@ class Production implements Translatable
      */
     private $id;
 
-    /**
-     * @var string
-     *
-     * @Gedmo\Translatable
-     * @ORM\Column(name="title", type="string", length=255)
-     */
-    private $title;
-
-    /**
-     * @ORM\OneToMany(
-     *   targetEntity="ProductionTranslation",
-     *   mappedBy="object",
-     *   cascade={"persist", "remove"}
-     * )
-     */
-    private $translations;
+    protected $translations;
 
     public function __construct()
     {
         $this->translations = new ArrayCollection();
-    }
-
-    public function getTranslations()
-    {
-        return $this->translations;
-    }
-
-    public function addTranslation(ProductionTranslation $t)
-    {
-        if (!$this->translations->contains($t)) {
-            $this->translations[] = $t;
-            $t->setObject($this);
-        }
     }
 
     /**
@@ -73,28 +46,5 @@ class Production implements Translatable
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set title
-     *
-     * @param string $title
-     * @return Production
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-
-        return $this;
-    }
-
-    /**
-     * Get title
-     *
-     * @return string 
-     */
-    public function getTitle()
-    {
-        return $this->title;
     }
 }

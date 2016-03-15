@@ -2,8 +2,11 @@
 
 namespace AppBundle\Entity;
 
+use A2lix\I18nDoctrineBundle\Doctrine\Interfaces\OneLocaleInterface;
+use A2lix\I18nDoctrineBundle\Doctrine\ORM\Util\Translation;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Translatable\Entity\MappedSuperclass\AbstractPersonalTranslation;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Translatable\Entity\MappedSuperclass\AbstractTranslation;
 
 /**
  * @ORM\Entity
@@ -13,23 +16,36 @@ use Gedmo\Translatable\Entity\MappedSuperclass\AbstractPersonalTranslation;
  *     })}
  * )
  */
-class ProductionTranslation extends AbstractPersonalTranslation
+class ProductionTranslation implements OneLocaleInterface
 {
-    /**
-     * @param string $locale
-     * @param string $field
-     * @param string $value
-     */
-    public function __construct($locale, $field, $value)
+    use Translation;
+
+    public function getId()
     {
-        $this->setLocale($locale);
-        $this->setField($field);
-        $this->setContent($value);
+        return $this->id;
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="Production", inversedBy="translations")
-     * @ORM\JoinColumn(name="object_id", referencedColumnName="id", onDelete="CASCADE")
+     * @var string
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    protected $object;
+    private $title;
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     * @return ProductionTranslation
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
 }
