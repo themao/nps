@@ -2,12 +2,11 @@ app_index:
     path:     /
     defaults: { _controller: AppBundle:Default:index }
 
-app_translation:
-    path:     /translation
-    defaults:
-        _controller: AppBundle:Default:translation
+app_index_multi:
+    path:     /{_locale}
+    defaults: { _controller: AppBundle:Default:index }
 
-app_translation_multi:
+app_translation:
     path:     /{_locale}/translation
     defaults:
         _controller: AppBundle:Default:translation

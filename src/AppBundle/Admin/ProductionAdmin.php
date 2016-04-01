@@ -12,7 +12,6 @@ class ProductionAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-//            ->add('title', 'text')
             ->add('translations', 'a2lix_translations')
         ;
     }

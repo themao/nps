@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             new A2lix\TranslationFormBundle\A2lixTranslationFormBundle(),
             new A2lix\I18nDoctrineBundle\A2lixI18nDoctrineBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

@@ -8,7 +8,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: ru
 
 framework:
     #esi:             ~
@@ -118,3 +118,9 @@ a2lix_translation_form:
     default_locale: en
     manager_registry: doctrine
     templating: "A2lixTranslationFormBundle::default.html.twig"
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
