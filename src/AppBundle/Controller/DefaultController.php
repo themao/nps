@@ -17,7 +17,7 @@ class DefaultController extends Controller
         return $this->render(
             'AppBundle:Default:index.html.twig',
             [
-                'isHomepage' => $request->getBasePath() == '/',
+                'isHomepage' => $request->getPathInfo() == '/',
             ]
         );
     }

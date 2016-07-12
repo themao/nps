@@ -14,35 +14,35 @@
 
 <body>
 
-<div id="wrapper">
+    <div id="wrapper">
 
-    <header>
-        <h1><a href="{{ path('app_index') }}">{{ 'home.header_link'|trans|raw }}</a></h1>
-        <h2>{{ 'home.header'|trans }}</h2>
+        <header>
+            <h1><a href="{{ path('app_index') }}">{{ 'home.header.link'|trans|raw }}</a></h1>
+            <h2>{{ 'home.header.title'|trans }}</h2>
 
-        {#<?php#}
-		{#if($path != 'main') {#}
-			{#include 'menu.php';#}
-		{#}#}
-	{#?>#}
-    </header>
+            {% if not isHomepage %}
+                {#{% include '@App/Default/menu.html.twig' %}#}
+                {{ knp_menu_render('AppBundle:Builder:topMenu') }}
+            {% endif %}
+        </header>
 
-    <div id="content">
+        <div id="content">
 
-        {% block content %}
-        {% endblock %}
+            {% block content %}
+            {% endblock %}
 
-    </div><!-- div#content -->
+        </div><!-- div#content -->
 
 
-</div><!-- div#wrapper -->
+    </div><!-- div#wrapper -->
 
-<div class="clear"></div>
+    <div class="clear"></div>
 
-<footer><div class="inner">
-        <address>Научно-производственное предприятие ООО &laquo;НасосПромСервис&raquo;.
-            Украина, г. Сумы, ул. Воеводина 27/2. Тел. (факс) +38 (0542) 64-08-92</address>
-    </div></footer>
+    <footer>
+        <div class="inner">
+            <address>{{ 'home.footer.address'|trans|raw }}</address>
+        </div>
+    </footer>
 
 </body>
 
