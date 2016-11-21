@@ -5,11 +5,17 @@ app_index:
 app_index_multi:
     path:     /{_locale}
     defaults: { _controller: AppBundle:Default:index }
+    requirements:
+        _locale: en|ru|ua
 
 app_translation:
     path:     /{_locale}/translation
     defaults:
         _controller: AppBundle:Default:translation
-        _locale: ru
+        _locale: en
     requirements:
         _locale: en|ru|ua
+
+app_page:
+    path:     /{path}
+    defaults: { _controller: AppBundle:Page:index }

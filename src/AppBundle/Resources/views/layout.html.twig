@@ -21,7 +21,6 @@
             <h2>{{ 'home.header.title'|trans }}</h2>
 
             {% if not isHomepage %}
-                {#{% include '@App/Default/menu.html.twig' %}#}
                 {{ knp_menu_render('AppBundle:Builder:topMenu') }}
             {% endif %}
         </header>
