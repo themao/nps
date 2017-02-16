@@ -18,4 +18,4 @@ app_translation:
 
 app_page:
     path:     /{path}
-    defaults: { _controller: AppBundle:Page:index }
+    defaults: { _controller: AppBundle:Page:index, path: '' }

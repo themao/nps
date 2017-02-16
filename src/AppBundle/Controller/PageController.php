@@ -12,8 +12,12 @@ class PageController extends Controller
      * @param string $path
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction(Request $request, $path)
+    public function indexAction(Request $request, $path = '')
     {
+        if (!$path) {
+            return $this->forward('AppBundle:Default:index');
+        }
+
         $pageRepo = $this->container->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Page');
         $page = $pageRepo->findOneBy(['slug' => $path]);
 
