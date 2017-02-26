@@ -20,7 +20,7 @@
             <h1><a href="{{ path('app_default') }}">{{ 'home.header.link'|trans|raw }}</a></h1>
             <h2>{{ 'home.header.title'|trans }}</h2>
 
-            {% if not isHomepage %}
+            {% if isHomepage is not defined %}
                 {{ knp_menu_render('AppBundle:Builder:topMenu') }}
             {% endif %}
         </header>

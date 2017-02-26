@@ -23,7 +23,7 @@ class DefaultController extends Controller
         $page = $pageRepo->findOneBy(['slug' => $path]);
 
         if (!$page) {
-            return $this->createNotFoundException('No such page!');
+            throw $this->createNotFoundException('No such page!');
         }
 
         return $this->render('AppBundle:Page:index.html.twig', ['page' => $page]);

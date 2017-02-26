@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 RUN apt-get -y update && apt-get install -y vim php  php-apcu php-cli  php-opcache  php-common  php-curl  php-fpm  php-imagick  php-intl  php-mysql  php-xdebug  php-http  php-xsl php-bcmath php-mbstring php-zip php-memcached imagemagick git curl htop cron
 
 RUN echo "xdebug.idekey = XDEBUG_PHPSTORM" >> /etc/php/7.0/mods-available/xdebug.ini
-RUN echo "xdebug.remote_port=9000" >> /etc/php/7.0/mods-available/xdebug.ini
+RUN echo "xdebug.remote_port=9001" >> /etc/php/7.0/mods-available/xdebug.ini
 RUN echo "xdebug.remote_enable=1" >> /etc/php/7.0/mods-available/xdebug.ini
 RUN echo "xdebug.remote_connect_back = On" >> /etc/php/7.0/mods-available/xdebug.ini
 RUN echo "xdebug.max_nesting_level = 300" >> /etc/php/7.0/mods-available/xdebug.ini
