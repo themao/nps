@@ -10,16 +10,23 @@ class DefaultController extends Controller
 {
     /**
      * @param Request $request
+     * @param string $path
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction(Request $request)
+    public function indexAction(Request $request, $path = '')
     {
-        return $this->render(
-            'AppBundle:Default:index.html.twig',
-            [
-                'isHomepage' => $request->getPathInfo() == '/',
-            ]
-        );
+        if (!$path) {
+            return $this->render('AppBundle:Default:index.html.twig', ['isHomepage' => true]);
+        }
+
+        $pageRepo = $this->container->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Page');
+        $page = $pageRepo->findOneBy(['slug' => $path]);
+
+        if (!$page) {
+            return $this->createNotFoundException('No such page!');
+        }
+
+        return $this->render('AppBundle:Page:index.html.twig', ['page' => $page]);
     }
 
     /**

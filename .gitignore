@@ -38,3 +38,7 @@
 /composer.phar
 
 /.idea/
+
+/web/app_dev.php
+/docker/data
+/docker/logs

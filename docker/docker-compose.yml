@@ -1,0 +1,49 @@
+app:
+    build: app
+    volumes:
+        - ../:/var/www
+    tty: true
+
+data:
+    image: ubuntu:14.04
+    tty: true
+    volumes_from:
+        - app
+    volumes:
+        - ./data/mysql:/var/lib/mysql
+
+mysql:
+    build: mysql
+    ports:
+        - 3306:3306
+    volumes_from:
+        - data
+    environment:
+        #MYSQL_ROOT_PASSWORD: toor
+        MYSQL_DATABASE: nps
+        MYSQL_USER: root
+        MYSQL_PASSWORD: toor
+
+php:
+    build: php7-fpm
+    environment:
+        XDEBUG_CONFIG: idekey=XDEBUG_PHPSTORM remote_host=172.17.0.1 remote_port=9001
+        PHP_IDE_CONFIG: serverName=npp-nps.local
+    ports:
+        - 9000:9000
+    volumes_from:
+        - app
+    links:
+        - mysql
+    tty: true
+
+nginx:
+    build: nginx
+    ports:
+        - "80:80"
+    links:
+        - php
+    volumes_from:
+        - app
+    volumes:
+        - ./logs/nginx/:/var/log/nginx
