@@ -26,6 +26,10 @@ class DefaultController extends Controller
             throw $this->createNotFoundException('No such page!');
         }
 
+        // render as twig template
+        $template = $this->get('twig')->createTemplate($page->getContent());
+        $page->getCurrentTranslation()->setContent($template->render([]));
+
         return $this->render('AppBundle:Page:index.html.twig', ['page' => $page]);
     }
 

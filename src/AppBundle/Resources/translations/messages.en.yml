@@ -1,11 +1,11 @@
 home:
   header:
       title: Scientific and Industrial Enterprise
-      link: LLC &laquo;NasosPromServis&raquo;
+      link: NasosPromServis, LLC
   footer:
       address: >
-        LLC &laquo;Scientific and Industrial Enterprise &laquo;NasosPromServis&raquo;.
-        Ukraine, Sumy, Ivana Piddubnoho str. 27/2. Telephone/Fax: +38 (0542) 64-08-92
+        Scientific and Industrial Enterprise NasosPromServis, LLC.
+        Ukraine, 40000 Sumy, 27/2 Ivan Piddubny str. Telephone/Fax: +38 (0542) 64-08-92
 
 menu:
     main_page: Main Page
