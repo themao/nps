@@ -4,7 +4,7 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <meta charset="utf-8">
-    {% stylesheets 'bundles/app/css/*' -%}
+    {% stylesheets 'bundles/app/css/style.css' -%}
         <link rel="stylesheet" href="{{ asset_url }}">
     {% endstylesheets -%}
     <script src="/js/html5.js"></script>
@@ -13,12 +13,17 @@
 </head>
 
 <body>
-
+{#{{ path('app', {'path': 'products'}) }}#}
     <div id="wrapper">
 
         <header>
             <h1><a href="{{ path('app_default') }}">{{ 'home.header.link'|trans|raw }}</a></h1>
             <h2>{{ 'home.header.title'|trans }}</h2>
+            <div class="language-switcher">
+                <br>
+                <a class="{% if app.request.attributes.get('_locale') == 'en' %}selected{% endif %}" href="{{ path('app_locale', {'_locale': 'en'}) }}">english</a> |
+                <a class="{% if app.request.attributes.get('_locale') == 'ru' %}selected{% endif %}" href="{{ path('app_locale', {'_locale': 'ru'}) }}">русский</a>
+            </div>
 
             {% if isHomepage is not defined %}
                 {{ knp_menu_render('AppBundle:Builder:topMenu') }}

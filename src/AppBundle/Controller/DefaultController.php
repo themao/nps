@@ -31,18 +31,12 @@ class DefaultController extends Controller
 
     /**
      * @param Request $request
+     * @param string $locale
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function translationAction(Request $request)
+    public function localeAction(Request $request, $locale)
     {
-        $productionRepo = $this->get('doctrine')->getRepository('AppBundle:Production');
-        $productionList = $productionRepo->findAll();
-
-        return $this->render(
-            'AppBundle:Default:translation.html.twig',
-            [
-                'productionList' => $productionList
-            ]
-        );
+        $request->getSession()->set('_locale', $locale);
+        $this->forward('AppBundle:Default:index');
     }
 }

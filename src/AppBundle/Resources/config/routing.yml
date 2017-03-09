@@ -1,3 +1,11 @@
+app:
+    path:     /{_locale}/{path}
+    defaults:
+        _controller: AppBundle:Default:index
+        path: ''
+    requirements:
+        _locale: en|ru|ua
+
 app_default:
     path:     /{path}
     defaults: { _controller: AppBundle:Default:index, path: '' }
@@ -6,16 +14,15 @@ app_default:
 #    path:     /
 #    defaults: { _controller: AppBundle:Default:index }
 
-app_index_multi:
-    path:     /{_locale}
-    defaults: { _controller: AppBundle:Default:index }
-    requirements:
-        _locale: en|ru|ua
+#app_index_multi:
+#    path:     /{_locale}
+#    defaults: { _controller: AppBundle:Default:index }
+#    requirements:
+#        _locale: en|ru|ua
 
-app_translation:
-    path:     /{_locale}/translation
+app_locale:
+    path:     /{_locale}
     defaults:
-        _controller: AppBundle:Default:translation
-        _locale: en
+        _controller: AppBundle:Default:locale
     requirements:
         _locale: en|ru|ua

@@ -25,6 +25,10 @@ class PageController extends Controller
             return $this->createNotFoundException('No such page!');
         }
 
+        // render as twig template
+        $template = $this->get('twig')->createTemplate($page);
+        $page = $template->render([]);
+
         return $this->render(
             'AppBundle:Page:index.html.twig', [
                 'page' => $page,
