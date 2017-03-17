@@ -15,6 +15,12 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request, $path = '')
     {
+        $pathInfo = $request->getPathInfo();
+        if (!in_array(substr($pathInfo, 1, 2), ['en', 'ru', 'ua'])) {
+            $redirect = rtrim('/' . $request->getLocale() . $pathInfo, '/');
+            return $this->redirect($redirect, 301);
+        }
+
         if (!$path) {
             return $this->render('AppBundle:Default:index.html.twig', ['isHomepage' => true]);
         }
