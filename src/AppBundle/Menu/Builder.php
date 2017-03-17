@@ -18,22 +18,22 @@ class Builder implements ContainerAwareInterface
         $menu = $factory->createItem('root');
 
         $menu->addChild('menu.main_page', [
-            'route' => 'app_default',
+            'route' => 'app',
         ]);
         $menu->addChild('menu.about', [
-            'route' => 'app_default',
+            'route' => 'app',
             'routeParameters' => ['path' => 'about'],
         ]);
         $menu->addChild('menu.services', [
-            'route' => 'app_default',
+            'route' => 'app',
             'routeParameters' => ['path' => 'services'],
         ]);
         $menu->addChild('menu.products', [
-            'route' => 'app_default',
+            'route' => 'app',
             'routeParameters' => ['path' => 'products'],
         ]);
         $menu->addChild('menu.contact', [
-            'route' => 'app_default',
+            'route' => 'app',
             'routeParameters' => ['path' => 'contact'],
         ]);
 
