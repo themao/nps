@@ -11,8 +11,8 @@ app_default:
     defaults: { _controller: AppBundle:Default:index, path: '' }
 
 products:
-    path:     /{_locale}/products/{path}
-    defaults: { _controller: AppBundle:Default:index, path: '' }
+    path:     /{_locale}/products/{slug}
+    defaults: { _controller: AppBundle:Product:index, slug: '' }
 
 #app_index:
 #    path:     /

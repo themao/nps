@@ -10,13 +10,13 @@ use Gedmo\Translatable\Entity\MappedSuperclass\AbstractTranslation;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="page_translations",
+ * @ORM\Table(name="product_translations",
  *     uniqueConstraints={@ORM\UniqueConstraint(name="lookup_unique_idx", columns={
  *         "locale", "object_id", "field"
  *     })}
  * )
  */
-class PageTranslation implements OneLocaleInterface
+class ProductTranslation implements OneLocaleInterface
 {
     use Translation;
 
@@ -53,7 +53,7 @@ class PageTranslation implements OneLocaleInterface
 
     /**
      * @param string $title
-     * @return PageTranslation
+     * @return ProductTranslation
      */
     public function setTitle($title)
     {
@@ -71,7 +71,7 @@ class PageTranslation implements OneLocaleInterface
 
     /**
      * @param string $content
-     * @return PageTranslation
+     * @return ProductTranslation
      */
     public function setContent($content)
     {
@@ -89,7 +89,7 @@ class PageTranslation implements OneLocaleInterface
 
     /**
      * @param string $metaDescription
-     * @return PageTranslation
+     * @return ProductTranslation
      */
     public function setMetaDescription($metaDescription)
     {

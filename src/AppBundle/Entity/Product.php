@@ -10,13 +10,13 @@ use Gedmo\Translatable\Translatable;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Products
+ * Product
  *
- * @ORM\Table(name="products")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ProductsRepository")
+ * @ORM\Table(name="product")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProductRepository")
  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
  */
-class Products implements Translatable
+class Product implements Translatable
 {
     use TimestampableEntity;
     use SoftDeleteableEntity;
@@ -30,6 +30,12 @@ class Products implements Translatable
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var string
+     * @ORM\Column(name="slug", type="string", length=30)
+     */
+    private $slug;
 
     protected $translations;
 
@@ -46,5 +52,23 @@ class Products implements Translatable
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     * @return Product
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+        return $this;
     }
 }
