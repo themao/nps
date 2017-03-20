@@ -10,13 +10,13 @@ use Gedmo\Translatable\Translatable;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Production
+ * Products
  *
- * @ORM\Table(name="production")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ProductionRepository")
+ * @ORM\Table(name="products")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProductsRepository")
  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
  */
-class Production implements Translatable
+class Products implements Translatable
 {
     use TimestampableEntity;
     use SoftDeleteableEntity;

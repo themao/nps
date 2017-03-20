@@ -53,7 +53,7 @@ class PageTranslation implements OneLocaleInterface
 
     /**
      * @param string $title
-     * @return ProductionTranslation
+     * @return ProductsTranslation
      */
     public function setTitle($title)
     {

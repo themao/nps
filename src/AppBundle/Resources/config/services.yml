@@ -5,8 +5,8 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: 'Content', label: 'Page' }
 
-    admin.production:
-        class: AppBundle\Admin\ProductionAdmin
-        arguments: [~, 'AppBundle\Entity\Production', ~]
+    admin.products:
+        class: AppBundle\Admin\ProductsAdmin
+        arguments: [~, 'AppBundle\Entity\Products', ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: 'Content', label: 'Production' }
+            - { name: sonata.admin, manager_type: orm, group: 'Content', label: 'Products' }

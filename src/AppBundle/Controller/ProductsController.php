@@ -5,7 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class ProductionController extends Controller
+class ProductsController extends Controller
 {
     /**
      * @param Request $request
@@ -14,7 +14,7 @@ class ProductionController extends Controller
     public function indexAction(Request $request)
     {
         return $this->render(
-            'AppBundle:Production:index.html.twig',
+            'AppBundle:Products:index.html.twig',
             [
                 'isHomepage' => $request->getPathInfo() == '/',
             ]

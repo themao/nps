@@ -10,6 +10,10 @@ app_default:
     path:     /{path}
     defaults: { _controller: AppBundle:Default:index, path: '' }
 
+products:
+    path:     /{_locale}/products/{path}
+    defaults: { _controller: AppBundle:Default:index, path: '' }
+
 #app_index:
 #    path:     /
 #    defaults: { _controller: AppBundle:Default:index }
