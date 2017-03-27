@@ -12,8 +12,8 @@
         ]
     },
     "require": {
-        "php": ">=5.3.9",
-        "symfony/symfony": "2.8.*",
+        "php": ">=5.5.9",
+        "symfony/symfony": "^2.8",
         "doctrine/orm": "^2.4.8",
         "doctrine/doctrine-bundle": "~1.4",
         "symfony/swiftmailer-bundle": "^2.3",
@@ -21,15 +21,17 @@
         "sensio/distribution-bundle": "~5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
-        "sonata-project/admin-bundle": "2.4.x-dev",
-        "sonata-project/doctrine-orm-admin-bundle": "^2.3",
-        "sonata-project/easy-extends-bundle": "^2.1",
-        "sonata-project/user-bundle": "^2.2",
+        "sonata-project/admin-bundle": "^3.15",
+        "sonata-project/user-bundle": "^3.2",
+        "sonata-project/doctrine-orm-admin-bundle": "^3.1",
+        "sonata-project/block-bundle": "^3.3",
+        "sonata-project/core-bundle": "^3.3",
         "stof/doctrine-extensions-bundle": "^1.2",
         "a2lix/i18n-doctrine-bundle": "^0.1.0",
         "a2lix/translation-form-bundle": "^2.1",
         "symfony/assetic-bundle": "^2.8",
-        "knplabs/knp-menu-bundle": "^2.0"
+        "knplabs/knp-menu-bundle": "^2.0",
+        "sonata-project/media-bundle": "^3.5"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
@@ -56,7 +58,7 @@
     "config": {
         "bin-dir": "bin",
         "platform": {
-            "php": "5.3.9"
+            "php": "5.5.9"
         }
     },
     "extra": {

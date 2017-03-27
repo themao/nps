@@ -37,6 +37,17 @@ class Product implements Translatable
      */
     private $slug;
 
+    /**
+     * @var \Application\Sonata\MediaBundle\Entity\Media
+     *
+     * @ORM\ManyToOne(
+     *  targetEntity="Application\Sonata\MediaBundle\Entity\Media",
+     *  cascade={"persist"},
+     *  fetch="LAZY"
+     * )
+     */
+    protected $picture;
+
     protected $translations;
 
     public function __construct()
@@ -69,6 +80,24 @@ class Product implements Translatable
     public function setSlug($slug)
     {
         $this->slug = $slug;
+        return $this;
+    }
+
+    /**
+     * @return \Application\Sonata\MediaBundle\Entity\Media
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param \Application\Sonata\MediaBundle\Entity\Media $picture
+     * @return $this
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
         return $this;
     }
 }

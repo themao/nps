@@ -29,6 +29,9 @@ class AppKernel extends Kernel
             new A2lix\I18nDoctrineBundle\A2lixI18nDoctrineBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Sonata\MediaBundle\SonataMediaBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
