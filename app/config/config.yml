@@ -133,7 +133,6 @@ sonata_media:
     contexts:
         default:  # the default context is mandatory
             providers:
-                - sonata.media.provider.dailymotion
                 - sonata.media.provider.youtube
                 - sonata.media.provider.image
                 - sonata.media.provider.file
@@ -142,7 +141,12 @@ sonata_media:
             formats:
                 small: { width: 100 , quality: 70}
                 big:   { width: 500 , quality: 70}
-
+        carousel:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 200, quality: 70}
+                big:   { width: 1600, quality: 95}
     cdn:
         server:
             path: /uploads/media # http://media.sonata-project.org/

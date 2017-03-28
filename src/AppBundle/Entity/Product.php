@@ -46,7 +46,7 @@ class Product implements Translatable
      *  fetch="LAZY"
      * )
      */
-    protected $picture;
+    protected $pictures;
 
     protected $translations;
 
@@ -86,18 +86,18 @@ class Product implements Translatable
     /**
      * @return \Application\Sonata\MediaBundle\Entity\Media
      */
-    public function getPicture()
+    public function getPictures()
     {
-        return $this->picture;
+        return $this->pictures;
     }
 
     /**
-     * @param \Application\Sonata\MediaBundle\Entity\Media $picture
-     * @return $this
+     * @param \Application\Sonata\MediaBundle\Entity\Media $pictures
+     * @return Product
      */
-    public function setPicture($picture)
+    public function setPictures($pictures)
     {
-        $this->picture = $picture;
+        $this->pictures = $pictures;
         return $this;
     }
 }
