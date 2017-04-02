@@ -1,5 +1,5 @@
-app:
-    build: app
+application:
+    build: application
     volumes:
         - ../:/var/www
     tty: true
@@ -8,7 +8,7 @@ data:
     image: ubuntu:14.04
     tty: true
     volumes_from:
-        - app
+        - application
     volumes:
         - ./data/mysql:/var/lib/mysql
 
@@ -32,7 +32,7 @@ php:
     ports:
         - 9000:9000
     volumes_from:
-        - app
+        - application
     links:
         - mysql
     tty: true
@@ -44,6 +44,6 @@ nginx:
     links:
         - php
     volumes_from:
-        - app
+        - application
     volumes:
         - ./logs/nginx/:/var/log/nginx

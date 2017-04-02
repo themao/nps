@@ -22,7 +22,10 @@ class DefaultController extends Controller
         }
 
         if (!$path) {
-            return $this->render('AppBundle:Default:index.html.twig', ['isHomepage' => true]);
+            return $this->render('AppBundle:Default:index.html.twig', [
+                'isHomepage' => true,
+                'meta' => '', // @TODO: add meta for index page
+            ]);
         }
 
         $pageRepo = $this->container->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Page');
@@ -36,7 +39,10 @@ class DefaultController extends Controller
         $template = $this->get('twig')->createTemplate($page->getContent());
         $page->getCurrentTranslation()->setContent($template->render([]));
 
-        return $this->render('AppBundle:Page:index.html.twig', ['page' => $page]);
+        return $this->render('AppBundle:Page:index.html.twig', [
+            'page' => $page,
+            'meta' => $page->getCurrentTranslation()->getMetaDescription(),
+        ]);
     }
 
     /**

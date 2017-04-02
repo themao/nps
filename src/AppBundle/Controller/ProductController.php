@@ -20,9 +20,10 @@ class ProductController extends Controller
                 'AppBundle:Product:index.html.twig',
                 [
                     'product' => $product,
+                    'meta' => $product->getCurrentTranslation()->getMetaDescription(),
                 ]
             );
         }
-        $this->createNotFoundException();
+        throw $this->createNotFoundException();
     }
 }

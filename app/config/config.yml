@@ -141,7 +141,7 @@ sonata_media:
             formats:
                 small: { width: 100 , quality: 70}
                 big:   { width: 500 , quality: 70}
-        carousel:
+        product:
             providers:
                 - sonata.media.provider.image
             formats:

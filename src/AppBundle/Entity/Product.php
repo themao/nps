@@ -38,10 +38,10 @@ class Product implements Translatable
     private $slug;
 
     /**
-     * @var \Application\Sonata\MediaBundle\Entity\Media
+     * @var \Application\Sonata\MediaBundle\Entity\Gallery
      *
      * @ORM\ManyToOne(
-     *  targetEntity="Application\Sonata\MediaBundle\Entity\Media",
+     *  targetEntity="Application\Sonata\MediaBundle\Entity\Gallery",
      *  cascade={"persist"},
      *  fetch="LAZY"
      * )

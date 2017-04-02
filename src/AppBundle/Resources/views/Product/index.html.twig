@@ -5,7 +5,20 @@
 {% block content %}
     <article>
         <h1>{{ product.title }}</h1>
-        {{ product.content|raw }}
+
+        <div class="product-content">
+            {% if product.content %}
+                {{ product.content|raw }}
+            {% endif %}
+        </div>
+
+        <div class="gallery">
+            {% for picture in product.pictures.galleryHasMedias %}
+                <a href="{% path picture.media, 'big' %}" target="_blank">
+                    {% thumbnail picture.media, 'small' %}
+                </a>
+            {% endfor %}
+        </div>
         <div class="clear"></div>
     </article>
 {% endblock %}

@@ -301,6 +301,10 @@ article ul.production-list .arrow-down {
     margin: 10px 5px 0 0;
 }
 
+.product-content {
+    margin-bottom: 20px;
+}
+
 .arrow-down {
     width: 0;
     height: 0;

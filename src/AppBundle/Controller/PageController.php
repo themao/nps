@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Page;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -19,6 +20,7 @@ class PageController extends Controller
         }
 
         $pageRepo = $this->container->get('doctrine.orm.entity_manager')->getRepository('AppBundle:Page');
+        /** @var Page $page */
         $page = $pageRepo->findOneBy(['slug' => $path]);
 
         if (!$page) {
@@ -32,6 +34,7 @@ class PageController extends Controller
         return $this->render(
             'AppBundle:Page:index.html.twig', [
                 'page' => $page,
+                'meta' => $page->getCurrentTranslation()->getMetaDescription(),
                 'isHomepage' => false,
             ]
         );
