@@ -14,6 +14,16 @@ class PageAdmin extends AbstractAdmin
         $formMapper
             ->add('slug')
             ->add('translations', 'a2lix_translations')
+            ->add(
+                'gallery',
+                'sonata_type_model_list',
+                [],
+                [
+                    'link_parameters' => [
+                        'context'  => 'page',
+                    ],
+                ]
+            )
         ;
     }
 

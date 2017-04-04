@@ -37,6 +37,17 @@ class Page implements Translatable
      */
     private $slug;
 
+    /**
+     * @var \Application\Sonata\MediaBundle\Entity\Gallery
+     *
+     * @ORM\ManyToOne(
+     *  targetEntity="Application\Sonata\MediaBundle\Entity\Gallery",
+     *  cascade={"persist"},
+     *  fetch="LAZY"
+     * )
+     */
+    protected $gallery;
+
     protected $translations;
 
     public function __construct()
@@ -69,6 +80,24 @@ class Page implements Translatable
     public function setSlug($slug)
     {
         $this->slug = $slug;
+        return $this;
+    }
+
+    /**
+     * @return \Application\Sonata\MediaBundle\Entity\Gallery
+     */
+    public function getGallery()
+    {
+        return $this->gallery;
+    }
+
+    /**
+     * @param \Application\Sonata\MediaBundle\Entity\Gallery $gallery
+     * @return Page
+     */
+    public function setGallery($gallery)
+    {
+        $this->gallery = $gallery;
         return $this;
     }
 }

@@ -39,7 +39,7 @@ class ProductTranslation implements OneLocaleInterface
 
     /**
      * @var string
-     * @ORM\Column(name="meta_description", type="string", length=255)
+     * @ORM\Column(name="meta_description", type="string", length=255, nullable=true)
      */
     private $metaDescription;
 

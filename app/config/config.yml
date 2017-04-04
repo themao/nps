@@ -141,6 +141,12 @@ sonata_media:
             formats:
                 small: { width: 100 , quality: 70}
                 big:   { width: 500 , quality: 70}
+        page:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 200, quality: 70}
+                big:   { width: 1600, quality: 95}
         product:
             providers:
                 - sonata.media.provider.image
