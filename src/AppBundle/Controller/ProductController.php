@@ -16,11 +16,16 @@ class ProductController extends Controller
     {
         $productRepo = $this->container->get('doctrine')->getRepository('AppBundle:Product');
         if ($product = $productRepo->findOneBy(['slug' => $slug])) {
+            $translation = $product->getCurrentTranslation();
+            $translator = $this->get('translator');
+            $title = $translator->trans('home.title');
+            $productsTitle = $translator->trans('home.products_title');
             return $this->render(
                 'AppBundle:Product:index.html.twig',
                 [
                     'product' => $product,
-                    'meta' => $product->getCurrentTranslation()->getMetaDescription(),
+                    'title' => "$title - $productsTitle - {$product->getTitle()}",
+                    'meta' => $product->getMetaDescription(),
                 ]
             );
         }

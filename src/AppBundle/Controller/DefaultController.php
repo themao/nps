@@ -21,10 +21,13 @@ class DefaultController extends Controller
             return $this->redirect($redirect, 301);
         }
 
+        $translator = $this->get('translator');
+        $title = $translator->trans('home.title');
         if (!$path) {
             return $this->render('AppBundle:Default:index.html.twig', [
                 'isHomepage' => true,
-                'meta' => '', // @TODO: add meta for index page
+                'title' => $title,
+                'meta' => $translator->trans('home.meta'),
             ]);
         }
 
@@ -41,6 +44,7 @@ class DefaultController extends Controller
 
         return $this->render('AppBundle:Page:index.html.twig', [
             'page' => $page,
+            'title' => "$title - {$page->getCurrentTranslation()->getTitle()}",
             'meta' => $page->getCurrentTranslation()->getMetaDescription(),
         ]);
     }
