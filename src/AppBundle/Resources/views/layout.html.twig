@@ -36,8 +36,8 @@
             <h2>{{ 'home.header.title'|trans }}</h2>
             <div class="language-switcher">
                 <br>
-                <a class="{% if app.session.get('_locale') == 'en' %}selected{% endif %}" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}">english</a> |
-                <a class="{% if app.session.get('_locale') == 'ru' %}selected{% endif %}" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'ru'})) }}">русский</a>
+                <a class="{% if app.request.attributes.get('_locale') == 'en' %}selected{% endif %}" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}">english</a> |
+                <a class="{% if app.request.attributes.get('_locale') == 'ru' %}selected{% endif %}" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'ru'})) }}">русский</a>
             </div>
 
             {% if isHomepage is not defined %}
