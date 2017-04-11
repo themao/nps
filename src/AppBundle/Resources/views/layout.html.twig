@@ -4,10 +4,25 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <meta charset="utf-8">
-    {% stylesheets 'bundles/app/css/style.css' -%}
+    {% stylesheets
+        'bundles/app/css/style.css'
+        'bundles/app/css/lightbox.css'
+    -%}
         <link rel="stylesheet" href="{{ asset_url }}">
     {% endstylesheets -%}
-    <script src="/js/html5.js"></script>
+    {% javascripts
+        'bundles/app/js/html5.js'
+        'bundles/app/js/jquery.js'
+        'bundles/app/js/lightbox.js'
+    -%}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts -%}
+    <script type="text/javascript" charset="utf-8">
+        lightbox.option({
+            'resizeDuration': 200,
+            'alwaysShowNavOnTouchDevices': true
+        })
+    </script>
     <meta name="description" content="{{ meta }}">
     <meta name='yandex-verification' content='7e7fef899d2fc27a'>
 </head>

@@ -13,9 +13,10 @@
         </div>
 
         <div class="gallery">
+            <p class="heading">{{ 'gallery.heading'|trans }}</p>
             {% for picture in product.pictures.galleryHasMedias %}
-                <a href="{% path picture.media, 'big' %}" target="_blank">
-                    {% thumbnail picture.media, 'small' %}
+                <a href="{% path picture.media, 'big' %}" data-lightbox="gallery" data-title="{{ product.title }}">
+                    <img src="{% path picture.media, 'small' %}" alt="{{ product.title }}">
                 </a>
             {% endfor %}
         </div>

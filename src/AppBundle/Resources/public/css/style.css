@@ -58,13 +58,21 @@ a:hover {
 }
 
 .gallery img {
-    float: left;
-    margin: 0 5px 5px 0;
+
 }
 
 .gallery a {
+    width: 150px;
+    height: 150px;
+    background: #333333;
+    border: solid 2px #777777;
     float: left;
-    margin: 0 0 15px 0;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.gallery .heading {
+    font-style: italic;
 }
 
 header {
