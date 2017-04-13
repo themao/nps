@@ -12,13 +12,20 @@ h1, h2, h3, h4, h5, h6 {
 
 html {
     font-size: 14px;
-    color: #ffffff;
+    color: #fff;
     font-family: "Arial";
-    background: #1d1d1d;
+    background-color: #2193db;
 }
 
+body {
+    background: url("/bundles/app/images/bg.png") repeat-x #1280cb;
+}
+/*
+9999ff
+*/
+
 a {
-    color: #ffffff;
+    color: #fff;
 }
 a:hover {
     text-decoration: none;
@@ -64,12 +71,15 @@ a:hover {
 .gallery a {
     width: 150px;
     height: 150px;
-    background: #333333;
-    border: solid 2px #777777;
+    background: #04548c;
+    border: solid 2px #04548c;
     float: left;
     margin: 5px;
     overflow: hidden;
-    text-align: center;
+}
+
+.gallery a:hover {
+    border-color: #00a7d0;
 }
 
 .gallery .heading {
@@ -81,7 +91,7 @@ header {
 }
 
 header h1 {
-    margin-top: 20px;
+    padding-top: 20px;
     font-size: 2.1em;
 }
 header h1 a {
@@ -89,7 +99,7 @@ header h1 a {
 }
 header h2 {
     font-size: 1.3em;
-    color: #a0a0a0;
+    color: #eee;
     font-style: italic;
 }
 
@@ -125,7 +135,9 @@ header ul li a {
     -moz-border-radius: 0 0 5px 5px;
     -webkit-border-radius: 0 0 5px 5px;
     position: relative;
-    behavior: url('js/PIE.htc');
+
+    border: solid 2px #0563a4;
+    border-top: none;
 }
 header ul li a:hover,
 header ul li.current a {
@@ -133,23 +145,23 @@ header ul li.current a {
 }
 header ul li:nth-child(1) a,
 header ul li a.i0 {
-    background: #444;
+    background: #128ce1;
 }
 header ul li:nth-child(2) a,
 header ul li a.i1 {
-    background: #777;
+    background: #1687d0;
 }
 header ul li:nth-child(3) a,
 header ul li a.i2 {
-    background: #999;
+    background: #219edb;
 }
 header ul li:nth-child(4) a,
 header ul li a.i3 {
-    background: #bbb;
+    background: #39abe0;
 }
 header ul li:nth-child(5) a,
 header ul li a.i4 {
-    background: #ccc;
+    background: #55b4e0;
 }
 
 #menu a.item {
@@ -177,23 +189,27 @@ header ul li a.i4 {
 }
 
 #menu a.item.i1 {
-    background: #777;
+    background: #1687d0;
+    border: solid 2px #fff;
 }
 #menu a.item.i2 {
-    background: #999;
+    background: #128ce1;
     margin-left: 130px;
+    border: solid 2px #fff;
 }
 #menu a.item.i3 {
-    background: #bbb;
+    background: #219edb;
     margin-left: 259px;
+    border: solid 2px #fff;
 }
 #menu a.item.i4 {
-    background: #ccc;
+    background: #39abe0;
     margin-left: 388px;
+    border: solid 2px #fff;
 }
 #menu a.item:hover {
     border: solid 2px #ffffff;
-    background: #1d1d1d;
+    background: #55b4e0;
 }
 #menu div.block-image {
     width: 125px;
@@ -203,19 +219,18 @@ header ul li a.i4 {
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
     position: relative;
-    behavior: url('js/PIE.htc');
     float: left;
     margin: 1px;
 }
 
 #menu div.block-image.img1 {
-    background: url("/images/pic-1.jpg") no-repeat;
+    background: url("/bundles/app/images/pic-1.jpg") no-repeat;
 }
 #menu div.block-image.i12 {
-    background-position: -127px 0px;
+    background-position: -127px 0;
 }
 #menu div.block-image.i13 {
-    background-position: -254px 0px;
+    background-position: -254px 0;
 }
 
 #menu div.block-image.i21 {
@@ -346,7 +361,8 @@ footer {
     width: 100%;
     height: 64px;
     text-align: center;
-    background: url("/images/footer-bg.png") repeat-x;
+    background: #075e9b;
+    border-top: solid 2px #04548c;
 }
 footer .inner {
     display: inline-block;
