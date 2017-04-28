@@ -1,0 +1,21 @@
+<section id="inquiry">
+    <h1>{{ 'products.inquiry.title'|trans }}</h1>
+    <h2>{{ 'products.inquiry.explanation'|trans }}</h2>
+    <form method="post">
+        <label for="email">{{ 'products.inquiry.email_label'|trans }}</label>
+        <input required id="email" type="text" name="email" placeholder="{{ 'products.inquiry.email_placeholder'|trans }}">
+
+        <input type="hidden" name="ip" value="{{ app.request.server.get('REMOTE_ADDR') }}">
+        <input type="hidden" name="locale" value="{{ app.request.attributes.get('_locale') }}">
+        <input type="hidden" name="product" value="{{ product.title }}">
+
+        <label for="text">{{ 'products.inquiry.text_label'|trans }}</label>
+        <textarea required id="text" name="text" placeholder="{{ 'products.inquiry.text_placeholder'|trans }}"></textarea>
+
+        <button class="submit">{{ 'products.inquiry.send_button'|trans }}</button>
+    </form>
+</section>
+<section id="inquiry-result">
+    <h1>{{ 'products.inquiry.success_h1'|trans }}</h1>
+    <h2>{{ 'products.inquiry.success_h2'|trans }}</h2>
+</section>

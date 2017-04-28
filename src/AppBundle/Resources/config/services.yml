@@ -10,3 +10,9 @@ services:
         arguments: [~, 'AppBundle\Entity\Product', ~]
         tags:
             - { name: sonata.admin, manager_type: orm, group: 'Content', label: 'Products' }
+
+    admin.inquiry:
+        class: AppBundle\Admin\InquiryAdmin
+        arguments: [~, 'AppBundle\Entity\Inquiry', ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Content', label: 'Inquiries' }

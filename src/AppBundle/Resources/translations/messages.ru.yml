@@ -19,3 +19,15 @@ menu:
 
 gallery:
   heading: Для увеличения изображения нажмите на любое из них.
+
+products:
+  inquiry:
+    title: Интересен продукт?
+    explanation: Отправьте запрос прямо отсюда!
+    email_label: Ваш E-Mail:
+    email_placeholder: Пожалуйста, введите E-Mail
+    text_label: Текст запроса:
+    text_placeholder: Пожалуйста, введите текст
+    send_button: Отправить
+    success_h1: Ваш запрос отправлен.
+    success_h2: Мы ответим вам как можно скорее.

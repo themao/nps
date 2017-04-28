@@ -19,3 +19,15 @@ menu:
 
 gallery:
   heading: To zoom an image, just click on it.
+
+products:
+  inquiry:
+    title: Interested in this product?
+    explanation: You can send an inquiry right here!
+    email_label: Your E-Mail:
+    email_placeholder: Please enter your E-Mail
+    text_label: Inquiry text:
+    text_placeholder: Please enter you message here
+    send_button: Send
+    success_h1: Your inquiry has been sent.
+    success_h2: We will get back to you as soon as possible.

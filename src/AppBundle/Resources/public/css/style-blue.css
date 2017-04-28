@@ -13,12 +13,12 @@ h1, h2, h3, h4, h5, h6 {
 html {
     font-size: 14px;
     color: #fff;
-    font-family: "Arial";
-    background-color: #2193db;
+    font-family: "Arial", serif;
+    background: url("/bundles/app/images/bg.png") repeat-x #2f95dc;
 }
 
 body {
-    background: url("/bundles/app/images/bg.png") repeat-x #1280cb;
+    /*background: url("/bundles/app/images/bg.png") repeat-x #37a2ed;*/
 }
 /*
 9999ff
@@ -361,10 +361,63 @@ footer {
     width: 100%;
     height: 64px;
     text-align: center;
-    background: #075e9b;
+    background: #1280cb;
     border-top: solid 2px #04548c;
 }
 footer .inner {
     display: inline-block;
     padding: 25px 0 0 0;
 }
+
+#inquiry {
+    float: left;
+    width: 350px;
+}
+
+#inquiry-result {
+    float: left;
+    width: 350px;
+    display: none;
+}
+
+#inquiry form {
+    margin: 10px 0;
+}
+#inquiry h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+#inquiry h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+    #inquiry form label {
+        width: 100%;
+        margin: 10px 0 5px 0;
+        display: block;
+        font-size: 16px;
+    }
+    #inquiry form input,
+    #inquiry form textarea {
+        font-size: 16px;
+        font-family: "Arial", serif;
+    }
+    #inquiry form textarea {
+        width: 100%;
+        padding: 5px;
+        border: none;
+    }
+    #inquiry form input {
+        width: 100%;
+        height: 32px;
+        padding: 0 5px;
+    }
+    #inquiry form button.submit {
+        width: 362px;
+        background: #fff;
+        border: solid 2px blue;
+        padding: 5px;
+        margin: 15px 0 0 0;
+        font-size: 18px;
+        font-weight: bold;
+    }

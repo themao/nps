@@ -30,3 +30,9 @@ app_locale:
         _controller: AppBundle:Default:locale
     requirements:
         _locale: en|ru|ua
+
+inquiry:
+    path:     /inquiry/send
+    defaults:
+        _method: POST
+        _controller: AppBundle:Inquiry:send

@@ -22,4 +22,5 @@
         </div>
         <div class="clear"></div>
     </article>
+    {{ render(controller('AppBundle:Inquiry:index', {'product': product})) }}
 {% endblock %}
