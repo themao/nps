@@ -43,10 +43,9 @@ class InquiryController extends Controller
 
         $message = \Swift_Message::newInstance()
             ->setSubject("Новий запит для {$inquiry->getProduct()}!")
-            ->setFrom($inquiry->getEmail())
-//            ->setTo($this->getParameter('admin_email'))
-//            ->setCc($this->getParameter('cc_email'))
-            ->setTo($this->getParameter('cc_email'))
+            ->setFrom($this->getParameter('from_email'))
+            ->setTo($this->getParameter('admin_email'))
+            ->setCc($this->getParameter('cc_email'))
             ->setBody(
                 $inquiry->getText(),
                 'text/html'
