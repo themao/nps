@@ -164,3 +164,7 @@ sonata_media:
         local:
             directory:  "%kernel.root_dir%/../web/uploads/media"
             create:     false
+
+knp_menu:
+    twig:
+        template: KnpMenuBundle::menu.html.twig

@@ -139,6 +139,9 @@ header ul li a {
     border: solid 2px #0563a4;
     border-top: none;
 }
+header ul li a:hover {
+    border-color: lightblue;
+}
 header ul li a:hover,
 header ul li.current a {
     padding-top: 60px;

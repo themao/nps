@@ -4,7 +4,6 @@ namespace AppBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\Matcher\Matcher;
-use Knp\Menu\Matcher\Voter\UriVoter;
 use Knp\Menu\Renderer\ListRenderer;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
@@ -35,12 +34,12 @@ class Builder implements ContainerAwareInterface
         $menu->addChild('menu.contact', [
             'route' => 'app',
             'routeParameters' => ['path' => 'contact'],
-        ]);
+        ])->setLabel('menu.contact');
 
         $menu['menu.main_page']->setCurrent(false);
 
         $matcher = new Matcher();
-        $matcher->addVoter(new UriVoter($_SERVER['REQUEST_URI']));
+        $matcher->addVoter(new SmartUriVoter($_SERVER['REQUEST_URI'], $this->container));
 
         $renderer = new ListRenderer($matcher);
         $renderer->render($menu);
