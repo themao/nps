@@ -21,7 +21,7 @@ class SmartUriVoter implements VoterInterface
     public function __construct($container)
     {
         $this->container = $container;
-        $this->uri = $_SERVER['REQUEST_URI'];
+        $this->uri = $this->container->get('request')->server->get('REQUEST_URI');
     }
 
     public function matchItem(ItemInterface $item)

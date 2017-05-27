@@ -39,7 +39,10 @@ class Builder implements ContainerAwareInterface
         $menu['menu.main_page']->setCurrent(false);
 
         $matcher = new Matcher();
-        $matcher->addVoter(new SmartUriVoter($_SERVER['REQUEST_URI'], $this->container));
+        $matcher->addVoter(new SmartUriVoter(
+            $this->container->get('request')->server->get('REQUEST_URI'),
+            $this->container
+        ));
 
         $renderer = new ListRenderer($matcher);
         $renderer->render($menu);
