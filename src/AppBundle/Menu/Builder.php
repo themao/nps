@@ -40,7 +40,7 @@ class Builder implements ContainerAwareInterface
 
         $matcher = new Matcher();
         $matcher->addVoter(new SmartUriVoter(
-            $this->container->get('request')->server->get('REQUEST_URI'),
+            php_sapi_name() == 'cli' ? '' : $this->container->get('request')->server->get('REQUEST_URI'),
             $this->container
         ));
 

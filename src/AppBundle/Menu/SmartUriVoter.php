@@ -21,7 +21,7 @@ class SmartUriVoter implements VoterInterface
     public function __construct($container)
     {
         $this->container = $container;
-        $this->uri = $this->container->get('request')->server->get('REQUEST_URI');
+        $this->uri = php_sapi_name() == 'cli' ? '' : $this->container->get('request')->server->get('REQUEST_URI');
     }
 
     public function matchItem(ItemInterface $item)
