@@ -44,9 +44,11 @@ class InquiryController extends Controller
         $body = sprintf(
             'Продукт: %s<br>
             E-mail: %s<br>
+            IP: %s<br>
             Текст запиту: %s<br>',
             $inquiry->getProduct(),
             $inquiry->getEmail(),
+            $inquiry->getClientIp(),
             $inquiry->getText());
         $message = \Swift_Message::newInstance()
             ->setSubject("Новий запит для {$inquiry->getProduct()}!")
