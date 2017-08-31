@@ -33,7 +33,8 @@ class InquiryAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('email')
+            ->addIdentifier('email')
+            ->add('text')
             ->add('product')
             ->add('locale')
             ->add('clientIp')

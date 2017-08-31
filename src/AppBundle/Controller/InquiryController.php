@@ -34,20 +34,27 @@ class InquiryController extends Controller
                 ->setProduct($request->get('product'))
                 ->setText($request->get('text'))
                 ->setLocale($request->get('locale'))
-                ->setClientIp($request->get('ip'));
+                ->setClientIp($request->getClientIp());
 
         /** @var EntityManager $manager */
         $manager = $this->get('doctrine')->getManager();
         $manager->persist($inquiry);
         $manager->flush();
 
+        $body = sprintf(
+            'Продукт: %s<br>
+            E-mail: %s<br>
+            Текст запиту: %s<br>',
+            $inquiry->getProduct(),
+            $inquiry->getEmail(),
+            $inquiry->getText());
         $message = \Swift_Message::newInstance()
             ->setSubject("Новий запит для {$inquiry->getProduct()}!")
             ->setFrom($this->getParameter('from_email'))
             ->setTo($this->getParameter('admin_email'))
             ->setCc($this->getParameter('cc_email'))
             ->setBody(
-                $inquiry->getText(),
+                $body,
                 'text/html'
             );
         $this->get('mailer')->send($message);
