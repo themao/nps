@@ -21,3 +21,5 @@ parameters:
     from_email: noreply@npp-nps.com
     admin_email: npp.nps@gmail.com
     cc_email: cn4747@gmail.com
+
+    isDev: ~

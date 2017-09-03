@@ -1,0 +1,12 @@
+{% extends 'AppBundle::layout.html.twig1' %}
+
+{% block title %}{{ 'errors.e404.title'|trans }}{% endblock %}
+
+{% block content %}
+    <h1>{{ 'errors.e404.content_title'|trans }}</h1>
+
+    <h2>{{ 'errors.e404.content'|trans|replace({
+            '{{services}}': path('app', {'path': 'services'}),
+            '{{products}}': path('app', {'path': 'products'})
+        })|raw }}</h2>
+{% endblock %}
