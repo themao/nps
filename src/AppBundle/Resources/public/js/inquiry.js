@@ -7,8 +7,8 @@ $(function () {
             async: false,
             data: $(this).serialize(),
             success: function () {
-                if (typeof ga !== 'undefined') {
-                    ga('send', {
+                if (typeof tracker !== 'undefined') {
+                    tracker.send({
                         hitType: 'event',
                         eventCategory: 'Inquiry',
                         eventAction: 'send',
@@ -24,8 +24,8 @@ $(function () {
     });
 
     $('#inquiry form input, #inquiry form textarea').focus(function () {
-        if (typeof ga !== 'undefined') {
-            ga('send', {
+        if (typeof tracker !== 'undefined') {
+            tracker.send({
                 hitType: 'event',
                 eventCategory: 'Inquiry',
                 eventAction: 'focus',

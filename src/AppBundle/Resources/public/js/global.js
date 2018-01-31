@@ -1,4 +1,11 @@
 $(function () {
+    if (typeof ga !== 'undefined') {
+        var allGa = ga.getAll();
+        if (allGa.length) {
+            var tracker = allGa[0];
+        }
+    }
+
     var timer = null;
     var type = null;
     var counter = {};
@@ -15,12 +22,13 @@ $(function () {
         counter[type]++;
 
         timer = setTimeout(function() {
-            if (typeof ga !== 'undefined') {
-                ga('send', {
+            if (typeof tracker !== 'undefined') {
+                tracker.send({
                     hitType: 'event',
                     eventCategory: 'Contact',
                     eventAction: 'hover',
-                    eventLabel: $(this).data('type') + ': ' + counter[type]
+                    eventLabel: $(this).data('type'),
+                    eventValue: counter[type]
                 });
             } else {
                 console.warn('No ga defined!');
@@ -29,8 +37,8 @@ $(function () {
     });
 
     $('a[href="mailto:nppnps@gmail.com"]').click(function() {
-        if (typeof ga !== 'undefined') {
-            ga('send', {
+        if (typeof tracker !== 'undefined') {
+            tracker.send({
                 hitType: 'event',
                 eventCategory: 'Contact',
                 eventAction: 'click',
@@ -42,8 +50,8 @@ $(function () {
     });
 
     $('a[data-lightbox="gallery"]').click(function() {
-        if (typeof ga !== 'undefined') {
-            ga('send', {
+        if (typeof tracker !== 'undefined') {
+            tracker.send({
                 hitType: 'event',
                 eventCategory: 'Gallery',
                 eventAction: 'click',
