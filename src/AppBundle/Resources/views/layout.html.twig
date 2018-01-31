@@ -10,24 +10,10 @@
     -%}
         <link rel="stylesheet" href="{{ asset_url }}">
     {% endstylesheets -%}
-    {% javascripts
-        'bundles/app/js/html5.js'
-        'bundles/app/js/jquery.js'
-        'bundles/app/js/lightbox.js'
-        'bundles/app/js/inquiry.js'
-    -%}
-        <script src="{{ asset_url }}"></script>
-    {% endjavascripts -%}
-    <script type="text/javascript" charset="utf-8">
-        lightbox.option({
-            'resizeDuration': 200,
-            'alwaysShowNavOnTouchDevices': true
-        })
-    </script>
-    <script type="text/javascript">
 
+    <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-37122241-1']);
+        _gaq.push(['_setAccount', '{{ ga_account }}']);
         _gaq.push(['_trackPageview']);
 
         (function() {
@@ -35,8 +21,29 @@
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
-
     </script>
+
+    <script type="text/javascript">
+        var currentProductTitle = '{{ product|default('No meta set') }}';
+    </script>
+
+    {% javascripts
+        'bundles/app/js/html5.js'
+        'bundles/app/js/jquery.js'
+        'bundles/app/js/lightbox.js'
+        'bundles/app/js/inquiry.js'
+        'bundles/app/js/global.js'
+    -%}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts -%}
+
+    <script type="text/javascript" charset="utf-8">
+        lightbox.option({
+            'resizeDuration': 200,
+            'alwaysShowNavOnTouchDevices': true
+        })
+    </script>
+
     <meta name="description" content="{{ meta|default('') }}">
 </head>
 

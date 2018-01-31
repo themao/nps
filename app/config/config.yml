@@ -41,6 +41,7 @@ twig:
     strict_variables: "%kernel.debug%"
     globals:
         isDev: "%isDev%"
+        ga_account: "%ga_account%"
 
 # Doctrine Configuration
 doctrine:

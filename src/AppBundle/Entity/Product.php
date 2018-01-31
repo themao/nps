@@ -100,4 +100,12 @@ class Product implements Translatable
         $this->pictures = $pictures;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getCurrentTranslation()->getTitle();
+    }
 }

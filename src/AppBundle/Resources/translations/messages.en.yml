@@ -8,7 +8,9 @@ home:
   footer:
       address: >
         Scientific and Industrial Enterprise NasosPromServis, LLC.
-        Ukraine, 40000 Sumy, 27/2 Ivan Piddubny str. Telephone: <a href="tel:+380996676494">+38 (099) 667-64-94</a>. Fax: +38 (0542) 64-08-92
+        Ukraine, 40000 Sumy, 27/2 Ivan Piddubny str.
+        Telephone: <a href="tel:+380996676494" class="contact-watch" data-type="phone-mobile">+38 (099) 667-64-94</a>.
+        <span class="contact-watch" data-type="phone-fax">Fax: +38 (0542) 64-08-92</span>
 
 menu:
     main_page: Main Page
