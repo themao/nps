@@ -2,15 +2,6 @@
 <html>
 
 <head>
-    <title>{% block title %}{% endblock %}</title>
-    <meta charset="utf-8">
-    {% stylesheets
-        'bundles/app/css/style-blue.css'
-        'bundles/app/css/lightbox.css'
-    -%}
-        <link rel="stylesheet" href="{{ asset_url }}">
-    {% endstylesheets -%}
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_account }}"></script>
     <script>
@@ -20,6 +11,15 @@
 
         gtag('config', '{{ ga_account }}');
     </script>
+
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    {% stylesheets
+        'bundles/app/css/style-blue.css'
+        'bundles/app/css/lightbox.css'
+    -%}
+        <link rel="stylesheet" href="{{ asset_url }}">
+    {% endstylesheets -%}
 
     <script type="text/javascript">
         var currentProductTitle = '{{ product|default('No meta set') }}';
