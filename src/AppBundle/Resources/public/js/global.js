@@ -1,10 +1,15 @@
 $(function () {
-    if (typeof ga !== 'undefined') {
-        var allGa = ga.getAll();
-        if (allGa.length) {
-            var tracker = allGa[0];
+    var tracker;
+    window.addEventListener('load', function(){
+        if(window.ga && ga.create) {
+            var allGa = ga.getAll();
+            if (allGa.length) {
+                tracker = allGa[0];
+            }
+        } else {
+            console.warn('Analytics not detected!')
         }
-    }
+    }, false);
 
     var timer = null;
     var type = null;
