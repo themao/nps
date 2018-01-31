@@ -15,7 +15,7 @@ $(function () {
                         eventLabel: currentProductTitle
                     });
                 } else {
-                    console.warn('No ga defined!');
+                    console.warn('No tracker defined!');
                 }
                 $('#inquiry').hide();
                 $('#inquiry-result').show();
@@ -32,7 +32,7 @@ $(function () {
                 eventLabel: currentProductTitle
             });
         } else {
-            console.warn('No ga defined!');
+            console.warn('No tracker defined!');
         }
     });
 });

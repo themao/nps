@@ -31,7 +31,7 @@ $(function () {
                     eventValue: counter[type]
                 });
             } else {
-                console.warn('No ga defined!');
+                console.warn('No tracker defined!');
             }
         }, 1500)
     });
@@ -45,7 +45,7 @@ $(function () {
                 eventLabel: 'email link'
             });
         } else {
-            console.warn('No ga defined!');
+            console.warn('No tracker defined!');
         }
     });
 
@@ -58,7 +58,7 @@ $(function () {
                 eventLabel: currentProductTitle
             });
         } else {
-            console.warn('No ga defined!');
+            console.warn('No tracker defined!');
         }
     });
 });
