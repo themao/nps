@@ -6,7 +6,6 @@ $(function () {
     $('.contact-watch').hover(null, function () {
         if (timer && type === $(this).data('type')) {
             clearTimeout(timer);
-            console.log('clear');
         }
 
         type = $(this).data('type');
