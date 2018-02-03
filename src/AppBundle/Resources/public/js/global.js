@@ -1,16 +1,18 @@
-$(function () {
-    var tracker;
-    window.addEventListener('load', function(){
-        if(window.ga && ga.create) {
-            var allGa = ga.getAll();
-            if (allGa.length) {
-                tracker = allGa[0];
-            }
+var tracker;
+window.addEventListener('load', function(){
+    if(window.ga && ga.create) {
+        var allGa = ga.getAll();
+        if (allGa.length) {
+            tracker = allGa[0];
         } else {
-            console.warn('Analytics not detected!')
+            console.warn('Could not get all ga!')
         }
-    }, false);
+    } else {
+        console.warn('Analytics not detected!')
+    }
+}, false);
 
+$(function () {
     var timer = null;
     var type = null;
     var counter = {};
