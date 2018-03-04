@@ -16,6 +16,14 @@
                 {% endfor %}
             {% endif %}
         </div>
+
         <div class="clear"></div>
     </article>
+
+    {% if page.slug == 'contact' %}
+        {{ render(controller('AppBundle:Inquiry:index', {
+            'product': contactProductData,
+            'type': 'contact'
+        })) }}
+    {% endif %}
 {% endblock %}

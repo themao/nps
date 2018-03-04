@@ -33,9 +33,8 @@ products:
     text_placeholder: Будь ласка, введіть текст
     required: Обов’язкові поля
     send_button: Відправити
-    success_h1: Ваш запит відправлено.
+    success_h1: Ваш запит надіслано.
     success_h2: Ми відповімо вам якнайшвидше.
-
 
 errors:
   e404:
@@ -47,3 +46,7 @@ errors:
   e500:
     title: Сторінка зламалась
     content: Внаслідок помилки сторінку неможливо відобразити.
+
+contact:
+  inquiry_title: З’явились питання?
+  inquiry_explanation: Надішліть нам повідомлення негайно!

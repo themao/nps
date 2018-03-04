@@ -1,6 +1,11 @@
 <section id="inquiry">
-    <h1>{{ 'products.inquiry.title'|trans }}</h1>
-    <h2>{{ 'products.inquiry.explanation'|trans }}</h2>
+    {% if type is defined and type == 'contact' %}
+        <h1>{{ 'contact.inquiry_title'|trans }}</h1>
+        <h2>{{ 'contact.inquiry_explanation'|trans }}</h2>
+    {% else %}
+        <h1>{{ 'products.inquiry.title'|trans }}</h1>
+        <h2>{{ 'products.inquiry.explanation'|trans }}</h2>
+    {% endif %}
     <form method="post">
         <label for="email">{{ 'products.inquiry.email_label'|trans }} (*)</label>
         <input required id="email" type="text" name="email" placeholder="{{ 'products.inquiry.email_placeholder'|trans }}">

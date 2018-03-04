@@ -14,12 +14,14 @@ class InquiryController extends Controller
     /**
      * @param Request $request
      * @param Product $product
+     * @param string $type
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction(Request $request, $product)
+    public function indexAction(Request $request, $product, $type = '')
     {
         return $this->render('AppBundle:Inquiry:index.html.twig', [
             'product' => $product,
+            'type' => $type,
         ]);
     }
 

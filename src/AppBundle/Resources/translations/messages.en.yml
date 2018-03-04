@@ -44,3 +44,7 @@ errors:
   e500:
     title: Page is broken
     content: An error happened and the page cannot be displayed properly.
+
+contact:
+  inquiry_title: Got any questions?
+  inquiry_explanation: Send us a message right now!

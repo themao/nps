@@ -30,9 +30,13 @@ class PageController extends Controller
         // render as twig template
         $template = $this->get('twig')->createTemplate($page);
         $page = $template->render([]);
+        $contactProductData = [
+            'title' => $page->getCurrentTranslation()->getTitle(),
+        ];
 
         return $this->render(
             'AppBundle:Page:index.html.twig', [
+                'contactProductData' => $contactProductData,
                 'page' => $page,
                 'meta' => $page->getCurrentTranslation()->getMetaDescription(),
                 'isHomepage' => false,
