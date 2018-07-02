@@ -41,9 +41,13 @@ class ExceptionListener
                     '_locale' => $request->getLocale(),
                     'slug' => $matches[1],
                 ]);
-                $event->setResponse(new RedirectResponse($url, 301));
             } else if (strpos($failedUrl, '//') !== false) {
                 $url = str_replace('//', '/', $failedUrl);
+            } else if (substr($failedUrl, -1, 1) === '/') {
+                $url = preg_replace('#/$#', '', $failedUrl);
+            }
+
+            if (isset($url)) {
                 $event->setResponse(new RedirectResponse($url, 301));
             }
 
