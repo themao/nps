@@ -44,7 +44,7 @@ class ExceptionListener
                 $event->setResponse(new RedirectResponse($url, 301));
             } else if (strpos($failedUrl, '//') !== false) {
                 $url = str_replace('//', '/', $failedUrl);
-                $event->setResponse(new RedirectResponse($url, 302));
+                $event->setResponse(new RedirectResponse($url, 301));
             }
 
             $urlRedirect = new UrlRedirect();
