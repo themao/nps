@@ -17,6 +17,12 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: 'Content', label: 'Inquiries' }
 
+    admin.url_redirect:
+        class: AppBundle\Admin\UrlRedirectAdmin
+        arguments: [~, 'AppBundle\Entity\UrlRedirect', ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Content', label: 'URL Redirects' }
+
     app.top_menu.voter.request:
         class: AppBundle\Menu\SmartUriVoter
         arguments:

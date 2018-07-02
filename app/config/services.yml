@@ -16,3 +16,9 @@ services:
         arguments: ['%kernel.default_locale%']
         tags:
             - { name: kernel.event_subscriber }
+
+    app.exception_listener:
+        class: AppBundle\EventListener\ExceptionListener
+        arguments: ['@service_container', '@doctrine.orm.default_entity_manager']
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
