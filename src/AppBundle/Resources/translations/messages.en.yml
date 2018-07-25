@@ -48,3 +48,11 @@ errors:
 contact:
   inquiry_title: Got any questions?
   inquiry_explanation: Send us a message right now!
+
+cookie_consent:
+  button: I do agree
+  text: >
+    We are using anonymized cookies for the smooth operation and for analysis of the user behavior on our website. By
+    clicking "I do agree" in the cookie banner on our site, you consent to the use of cookies in accordance with our
+    cookie policy. For more information on the use of cookies and website analytics tools and their suppression, please
+    see our <a href="/en/privacy-policy">privacy policy</a>.

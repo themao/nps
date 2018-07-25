@@ -10,7 +10,7 @@
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', '{{ ga_account }}');
+            gtag('config', '{{ ga_account }}', { 'anonymize_ip': true });
         </script>
     {% endif %}
 
@@ -48,6 +48,20 @@
 </head>
 
 <body>
+
+    {% if not app.request.cookies.get('cookie_consent') %}
+        <div id="cookie-consent">
+            <div class="inner">
+                <div class="text">
+                    {{ 'cookie_consent.text'|trans|raw }}
+                </div>
+
+                <div class="button">
+                    <button>{{ 'cookie_consent.button'|trans }}</button>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 
     <div id="wrapper">
 

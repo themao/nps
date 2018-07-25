@@ -62,4 +62,13 @@ class DefaultController extends Controller
         $request->getSession()->set('_locale', $locale);
         $this->forward('AppBundle:Default:index');
     }
+
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function privacyPolicyAction(Request $request)
+    {
+        return $this->render('AppBundle:Default:privacy_policy.en.html.twig');
+    }
 }

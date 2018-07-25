@@ -33,6 +33,47 @@ a:hover {
 
 .clear { clear: both; }
 
+#cookie-consent {
+    width: 100%;
+    float: left;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 2;
+    position: relative;
+    z-index: 99991;
+    border-bottom: solid 2px #1b6d85;
+}
+
+#cookie-consent a {
+    color: #333333;
+}
+
+#cookie-consent .inner {
+    margin: 15px;
+    float: left;
+}
+
+#cookie-consent .text {
+    width: 90%;
+    float: left;
+}
+
+#cookie-consent .button {
+    width: 10%;
+    float: left;
+}
+
+#cookie-consent .button button {
+    float: right;
+    background: #00a7d0;
+    color: #ffffff;
+    border: solid 2px #00b3ee;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 7px;
+    cursor: pointer;
+}
+
 #wrapper {
     width: 1000px;
     margin: 0 auto 30px auto;

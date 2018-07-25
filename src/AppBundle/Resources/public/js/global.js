@@ -68,4 +68,13 @@ $(function () {
             console.warn('No tracker defined!');
         }
     });
+
+    $('#cookie-consent .button button').on('click', function() {
+        console.log('c');
+        var expires = new Date();
+        expires.setTime(expires.getTime() + (365 * 24 * 60 * 60 * 1000));
+        document.cookie = 'cookie_consent=1;expires=' + expires.toUTCString();
+
+        $('#cookie-consent').slideUp();
+    });
 });
