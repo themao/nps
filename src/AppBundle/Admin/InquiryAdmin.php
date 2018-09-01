@@ -38,6 +38,7 @@ class InquiryAdmin extends AbstractAdmin
             ->add('product')
             ->add('locale')
             ->add('clientIp')
+            ->add('createdAt')
         ;
     }
 }
