@@ -17,8 +17,12 @@ class ProductController extends Controller
         $productRepo = $this->container->get('doctrine')->getRepository('AppBundle:Product');
         if ($product = $productRepo->findOneBy(['slug' => $slug])) {
             $translation = $product->getCurrentTranslation();
-            $template = $this->get('twig')->createTemplate($translation->getContent());
-            $content = $template->render([]);
+            if ($translation->getContent()) {
+                $template = $this->get('twig')->createTemplate($translation->getContent());
+                $content = $template->render([]);
+            } else {
+                $content = '';
+            }
             $translator = $this->get('translator');
             $title = $translator->trans('home.title');
             $productsTitle = $translator->trans('home.products_title');
