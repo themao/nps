@@ -25,6 +25,7 @@ gallery:
 
 products:
   inquiry:
+    error: Произошла ошибка. Пожалуйста, повторите позже.
     title: Интересен продукт?
     explanation: Отправьте запрос прямо отсюда!
     email_label: Ваш E-Mail

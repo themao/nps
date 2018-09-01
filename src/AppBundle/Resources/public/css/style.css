@@ -125,7 +125,6 @@ header ul li a {
     -moz-border-radius: 0 0 5px 5px;
     -webkit-border-radius: 0 0 5px 5px;
     position: relative;
-    behavior: url('js/PIE.htc');
 }
 header ul li a:hover,
 header ul li.current a {
@@ -170,7 +169,6 @@ header ul li a.i4 {
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
     position: relative;
-    behavior: url('js/PIE.htc');
 
     float: left;
     margin: 1px;
@@ -203,7 +201,6 @@ header ul li a.i4 {
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
     position: relative;
-    behavior: url('js/PIE.htc');
     float: left;
     margin: 1px;
 }

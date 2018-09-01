@@ -19,6 +19,12 @@ $(function () {
                 }
                 $('#inquiry').hide();
                 $('#inquiry-result').show();
+            },
+            error: function() {
+                $('#inquiry-error').show();
+                setTimeout(function () {
+                    $('#inquiry-error').slideUp();
+                }, 2500);
             }
         });
     });

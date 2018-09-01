@@ -24,6 +24,7 @@ gallery:
 
 products:
   inquiry:
+    error: An error occured! Please, try again later.
     title: Interested in this product?
     explanation: You can send an inquiry right here!
     email_label: Your E-Mail

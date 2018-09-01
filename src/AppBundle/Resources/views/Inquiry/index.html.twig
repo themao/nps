@@ -7,6 +7,8 @@
         <h2>{{ 'products.inquiry.explanation'|trans }}</h2>
     {% endif %}
     <form method="post">
+        <div id="inquiry-error">{{ 'products.inquiry.error'|trans }}</div>
+
         <label for="email">{{ 'products.inquiry.email_label'|trans }} (*)</label>
         <input required id="email" type="text" name="email" placeholder="{{ 'products.inquiry.email_placeholder'|trans }}">
 

@@ -226,7 +226,6 @@ header ul li a.i4 {
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
     position: relative;
-    behavior: url('js/PIE.htc');
 
     float: left;
     margin: 1px;
@@ -464,4 +463,15 @@ footer .inner {
         margin: 15px 0 0 0;
         font-size: 18px;
         font-weight: bold;
+        cursor: pointer;
+    }
+    #inquiry form button.submit:disabled {
+        border-color: #cccccc;
+        cursor: wait;
+    }
+    #inquiry-error {
+        color: red;
+        font-weight: bold;
+        font-size: 18px;
+        display: none;
     }

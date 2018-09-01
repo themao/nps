@@ -25,6 +25,7 @@ gallery:
 
 products:
   inquiry:
+    error: Сталася помилка. Будь ласка, спробуйте пізніше.
     title: Зацікавились продуктом?
     explanation: Відправте запит прямо звідси!
     email_label: Ваш E-Mail
