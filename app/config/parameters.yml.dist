@@ -15,6 +15,7 @@ parameters:
     mailer_port: 587
     mailer_user: SMTP_Injection
     mailer_password: ~
+    mailer_encryption: ssl
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt

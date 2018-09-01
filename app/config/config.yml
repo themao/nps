@@ -88,7 +88,7 @@ a2lix_i18n_doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    encryption: tls
+    encryption: "%mailer_encryption%"
     auth_mode:  login
     transport: "%mailer_transport%"
     host:      "%mailer_host%"
