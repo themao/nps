@@ -52,16 +52,20 @@ class InquiryController extends Controller
             $inquiry->getEmail(),
             $inquiry->getClientIp(),
             $inquiry->getText());
-        $message = \Swift_Message::newInstance()
-            ->setSubject("Новий запит для {$inquiry->getProduct()}!")
-            ->setFrom($this->getParameter('from_email'))
-            ->setTo($this->getParameter('admin_email'))
-            ->setCc($this->getParameter('cc_email'))
-            ->setBody(
-                $body,
-                'text/html'
-            );
-        $this->get('mailer')->send($message);
+        try {
+            $message = \Swift_Message::newInstance()
+                ->setSubject("Новий запит для {$inquiry->getProduct()}!")
+                ->setFrom($this->getParameter('from_email'))
+                ->setTo($this->getParameter('admin_email'))
+                ->setCc($this->getParameter('cc_email'))
+                ->setBody(
+                    $body,
+                    'text/html'
+                );
+            $this->get('mailer')->send($message);
+        } catch (\Exception $e) {
+            $this->container->get('logger')->addCritical($e->getMessage());
+        }
 
         return new JsonResponse(true);
     }
