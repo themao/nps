@@ -38,6 +38,12 @@ class Page implements Translatable
     private $slug;
 
     /**
+     * @var string
+     * @ORM\Column(name="showInquiryForm", type="boolean")
+     */
+    private $showInquiryForm;
+
+    /**
      * @var \Application\Sonata\MediaBundle\Entity\Gallery
      *
      * @ORM\ManyToOne(
@@ -80,6 +86,24 @@ class Page implements Translatable
     public function setSlug($slug)
     {
         $this->slug = $slug;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getShowInquiryForm()
+    {
+        return $this->showInquiryForm;
+    }
+
+    /**
+     * @param string $showInquiryForm
+     * @return Page
+     */
+    public function setShowInquiryForm($showInquiryForm)
+    {
+        $this->showInquiryForm = $showInquiryForm;
         return $this;
     }
 

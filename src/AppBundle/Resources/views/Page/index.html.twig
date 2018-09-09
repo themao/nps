@@ -20,9 +20,9 @@
         <div class="clear"></div>
     </article>
 
-    {% if page.slug == 'contact' %}
+    {% if page.slug == 'contact' or page.showInquiryForm %}
         {{ render(controller('AppBundle:Inquiry:index', {
-            'product': contactProductData,
+            'product': inquiryFormProductData,
             'type': 'contact'
         })) }}
     {% endif %}

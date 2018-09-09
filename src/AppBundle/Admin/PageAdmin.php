@@ -13,6 +13,7 @@ class PageAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('slug')
+            ->add('showInquiryForm')
             ->add('translations', 'a2lix_translations')
             ->add(
                 'gallery',
