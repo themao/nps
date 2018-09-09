@@ -51,7 +51,9 @@ class InquiryController extends Controller
             $inquiry->getProduct(),
             $inquiry->getEmail(),
             $inquiry->getClientIp(),
-            $inquiry->getText());
+            $inquiry->getText()
+        );
+
         try {
             $message = \Swift_Message::newInstance()
                 ->setSubject("Новий запит для {$inquiry->getProduct()}!")

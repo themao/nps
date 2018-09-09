@@ -1,7 +1,7 @@
 application:
-    build: application
+    build: docker/application
     volumes:
-        - ../:/var/www
+        - ./:/var/www
     tty: true
 
 data:
@@ -10,22 +10,21 @@ data:
     volumes_from:
         - application
     volumes:
-        - ./data/mysql:/var/lib/mysql
+        - ./docker/data/mysql:/var/lib/mysql
 
 mysql:
-    build: mysql
+    build: docker/mysql
     ports:
         - 3306:3306
     volumes_from:
         - data
     environment:
-        #MYSQL_ROOT_PASSWORD: toor
         MYSQL_DATABASE: nps
         MYSQL_USER: root
         MYSQL_PASSWORD: toor
 
 php:
-    build: php7-fpm
+    build: docker/php7-fpm
     environment:
         XDEBUG_CONFIG: idekey=XDEBUG_PHPSTORM remote_host=172.17.0.1 remote_port=9001
         PHP_IDE_CONFIG: serverName=npp-nps.local
@@ -38,7 +37,7 @@ php:
     tty: true
 
 nginx:
-    build: nginx
+    build: docker/nginx
     ports:
         - "80:80"
     links:
@@ -46,4 +45,4 @@ nginx:
     volumes_from:
         - application
     volumes:
-        - ./logs/nginx/:/var/log/nginx
+        - ./docker/logs/nginx/:/var/log/nginx
