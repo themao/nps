@@ -16,7 +16,6 @@
 /wordpress/wp-login.php /403.txt;
 /wp//wp-login.php /403.txt;
 /wp/wp-login.php /403.txt;
-/connectors/system/phpthumb.php /403.txt;
 /en/favicon.png /403.txt;
 /css/style.css /403.txt;
 /en/sftp-config.json /403.txt;
