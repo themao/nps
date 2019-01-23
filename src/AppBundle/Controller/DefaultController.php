@@ -46,6 +46,7 @@ class DefaultController extends Controller
 
         return $this->render('AppBundle:Page:index.html.twig', [
             'contactProductData' => $contactProductData,
+            'inquiryFormProductData' => ['title' => 'Contact Page'],
             'page' => $page,
             'title' => "$title - {$page->getCurrentTranslation()->getTitle()}",
             'meta' => $page->getCurrentTranslation()->getMetaDescription(),
