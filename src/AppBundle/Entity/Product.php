@@ -106,6 +106,6 @@ class Product implements Translatable
      */
     public function __toString()
     {
-        return $this->getCurrentTranslation()->getTitle();
+        return $this->getCurrentTranslation() ? $this->getCurrentTranslation()->getTitle() : '';
     }
 }
