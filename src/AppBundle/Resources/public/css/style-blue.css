@@ -17,13 +17,6 @@ html {
     background: url("/bundles/app/images/bg.png") repeat-x #2f95dc;
 }
 
-body {
-    /*background: url("/bundles/app/images/bg.png") repeat-x #37a2ed;*/
-}
-/*
-9999ff
-*/
-
 a {
     color: #fff;
 }
@@ -414,13 +407,15 @@ footer .inner {
 
 #inquiry {
     float: left;
-    width: 350px;
+    width: 340px;
+    margin-left: 10px;
 }
 
 #inquiry-result {
     float: left;
-    width: 350px;
+    width: 340px;
     display: none;
+    margin-left: 10px;
 }
 
 #inquiry form {
@@ -456,7 +451,7 @@ footer .inner {
         padding: 0 5px;
     }
     #inquiry form button.submit {
-        width: 362px;
+        width: 350px;
         background: #fff;
         border: solid 2px blue;
         padding: 5px;
