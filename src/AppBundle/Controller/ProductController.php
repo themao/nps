@@ -31,7 +31,7 @@ class ProductController extends Controller
                 [
                     'product' => $product,
                     'content' => $content,
-                    'title' => "$title - $productsTitle - {$product->getTitle()}",
+                    'title' => "$productsTitle - {$product->getTitle()} | $title",
                     'meta' => $product->getMetaDescription(),
                 ]
             );

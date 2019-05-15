@@ -48,7 +48,7 @@ class DefaultController extends Controller
             'contactProductData' => $contactProductData,
             'inquiryFormProductData' => ['title' => 'Contact Page'],
             'page' => $page,
-            'title' => "$title - {$page->getCurrentTranslation()->getTitle()}",
+            'title' => "{$page->getCurrentTranslation()->getTitle()} | $title",
             'meta' => $page->getCurrentTranslation()->getMetaDescription(),
         ]);
     }
