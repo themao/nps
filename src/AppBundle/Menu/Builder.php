@@ -35,6 +35,7 @@ class Builder implements ContainerAwareInterface
             'route' => 'app',
             'routeParameters' => ['path' => 'contact'],
         ])->setLabel('menu.contact');
+        $menu->addChild('menu.close')->setLabel('+')->setAttribute('class', 'close');
 
         $menu['menu.main_page']->setCurrent(false);
 

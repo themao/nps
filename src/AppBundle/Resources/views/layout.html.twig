@@ -16,6 +16,7 @@
 
     <title>{% block title %}{% endblock %}</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% stylesheets
         'bundles/app/css/style-blue.css'
         'bundles/app/css/lightbox.css'
@@ -76,6 +77,7 @@
 
             {% if isHomepage is not defined %}
                 {{ knp_menu_render('AppBundle:Builder:topMenu') }}
+                <i class="menu"></i>
             {% endif %}
         </header>
 

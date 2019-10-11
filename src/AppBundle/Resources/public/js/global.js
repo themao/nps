@@ -77,4 +77,14 @@ $(function () {
 
         $('#cookie-consent').slideUp();
     });
+
+    $('header .menu').on('click', function() {
+        $(this).hide();
+        $('header ul').slideDown();
+    });
+
+    $('header ul .close').on('click', function() {
+        $('header .menu').show();
+        $('header ul').slideUp();
+    });
 });

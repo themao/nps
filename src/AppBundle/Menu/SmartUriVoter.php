@@ -33,11 +33,16 @@ class SmartUriVoter implements VoterInterface
         $uri = parse_url(str_replace('/app_dev.php/', '', $this->uri));
         $itemUri = parse_url(str_replace('/app_dev.php/', '', $item->getUri()));
         $moduleMatches = false;
+
         if (isset($uri['path'], $itemUri['path'])) {
             $uriParts = explode('/', $uri['path']);
             $itemParts = explode('/', $itemUri['path']);
-            $moduleMatches = $uriParts[1] == $itemParts[1];
+
+            if (isset($uriParts[2], $itemParts[2])) {
+                $moduleMatches = $uriParts[2] == $itemParts[2];
+            }
         }
+
         if ($item->getUri() === $this->uri || $moduleMatches) {
             return true;
         }
