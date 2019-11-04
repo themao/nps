@@ -12,6 +12,7 @@
             {% endif %}
         </div>
 
+        {% if product.pictures.galleryHasMedias.count %}
         <div class="gallery">
             <p class="heading">{{ 'gallery.heading'|trans }}</p>
             {% for picture in product.pictures.galleryHasMedias %}
@@ -20,6 +21,7 @@
                 </a>
             {% endfor %}
         </div>
+        {% endif %}
         <div class="clear"></div>
     </article>
     {{ render(controller('AppBundle:Inquiry:index', {'product': product})) }}
