@@ -72,6 +72,7 @@
             <div class="language-switcher">
                 <br>
                 <a class="{% if app.request.attributes.get('_locale') == 'en' %}selected{% endif %}" href="{{ path(app.request.attributes.get('_route')|default('app'), app.request.attributes.get('_route_params')|default({})|merge({'_locale': 'en'})) }}">english</a> |
+                <a class="{% if app.request.attributes.get('_locale') == 'ua' %}selected{% endif %}" href="{{ path(app.request.attributes.get('_route')|default('app'), app.request.attributes.get('_route_params')|default({})|merge({'_locale': 'ua'})) }}">українська</a> |
                 <a class="{% if app.request.attributes.get('_locale') == 'ru' %}selected{% endif %}" href="{{ path(app.request.attributes.get('_route')|default('app'), app.request.attributes.get('_route_params')|default({})|merge({'_locale': 'ru'})) }}">русский</a>
             </div>
 
