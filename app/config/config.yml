@@ -42,6 +42,7 @@ twig:
     globals:
         isDev: "%isDev%"
         ga_account: "%ga_account%"
+        hotjar_id: "%hotjar_id%"
 
 # Doctrine Configuration
 doctrine:

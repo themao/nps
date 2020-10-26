@@ -25,3 +25,4 @@ parameters:
 
     isDev: ~
     ga_account: ~
+    hotjar_id: ~
