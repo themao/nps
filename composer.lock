@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "e88b1d191c2659403cbd204f1558d608",
@@ -59,6 +59,7 @@
                 "translatable",
                 "translation"
             ],
+            "abandoned": "knplabs/doctrine-behaviors",
             "time": "2014-04-27T11:40:04+00:00"
         },
         {
@@ -2334,6 +2335,7 @@
                 "configuration",
                 "distribution"
             ],
+            "abandoned": true,
             "time": "2018-12-14T17:36:15+00:00"
         },
         {
@@ -2768,6 +2770,7 @@
             "keywords": [
                 "sonata"
             ],
+            "abandoned": true,
             "time": "2017-09-20T14:14:38+00:00"
         },
         {
@@ -4335,16 +4338,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.49",
+            "version": "v2.8.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "f8ac64c075a36bedd0de43192d9601c20b99716e"
+                "reference": "88f3ef62d6ab870128352c8686c7889562698faf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/f8ac64c075a36bedd0de43192d9601c20b99716e",
-                "reference": "f8ac64c075a36bedd0de43192d9601c20b99716e",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/88f3ef62d6ab870128352c8686c7889562698faf",
+                "reference": "88f3ef62d6ab870128352c8686c7889562698faf",
                 "shasum": ""
             },
             "require": {
@@ -4471,7 +4474,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2018-12-06T14:45:26+00:00"
+            "time": "2019-11-13T08:36:42+00:00"
         },
         {
             "name": "twbs/bootstrap",
@@ -4577,6 +4580,7 @@
                 "i18n",
                 "text"
             ],
+            "abandoned": true,
             "time": "2018-12-05T18:34:18+00:00"
         },
         {
@@ -4706,6 +4710,7 @@
                 "php",
                 "test"
             ],
+            "abandoned": "laminas/laminas-diagnostics",
             "time": "2016-04-01T10:39:00+00:00"
         }
     ],
@@ -4836,5 +4841,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "5.5.9"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }
