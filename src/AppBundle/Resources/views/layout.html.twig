@@ -29,6 +29,23 @@
     <title>{% block title %}{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% set alternates = {
+        'en': site_url ~ path(
+            app.request.attributes.get('_route')|default('app'),
+            app.request.attributes.get('_route_params')|default({})|merge({'_locale': 'en'})
+        ),
+        'ua': site_url ~ path(
+            app.request.attributes.get('_route')|default('app'),
+            app.request.attributes.get('_route_params')|default({})|merge({'_locale': 'ua'})
+        ),
+        'ru': site_url ~ path(
+            app.request.attributes.get('_route')|default('app'),
+            app.request.attributes.get('_route_params')|default({})|merge({'_locale': 'ru'})
+        ),
+    } -%}
+    <link rel="alternate" hreflang="en" href="{{ alternates['en'] }}">
+    <link rel="alternate" hreflang="ua" href="{{ alternates['ua'] }}">
+    <link rel="alternate" hreflang="ru" href="{{ alternates['ru'] }}">
     {% stylesheets
         'bundles/app/css/style-blue.css'
         'bundles/app/css/lightbox.css'
@@ -36,8 +53,17 @@
         <link rel="stylesheet" href="{{ asset_url }}">
     {% endstylesheets -%}
 
+    {% if product|default and product.currentTranslation.noindex -%}
+        <meta name="robots" content="noindex">
+    {% endif -%}
+
+    {% if product|default and product.pictures.galleryHasMedias.count -%}
+        {% set thumbUrl = product.pictures.galleryHasMedias|filter(v => v.enabled)|first|default(product.pictures.galleryHasMedias|first) -%}
+        <meta name="thumbnail" content="{{ site_url }}{% path thumbUrl.media, 'small' %}">
+    {% endif -%}
+
     <script type="text/javascript">
-        var currentProductTitle = '{{ product|default('No meta set') }}';
+        var currentProductTitle = '{{ product|default(title) }}';
     </script>
 
     {% javascripts

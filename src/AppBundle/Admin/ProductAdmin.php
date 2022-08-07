@@ -31,6 +31,7 @@ class ProductAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('translations.title')
+            ->add('translations.noindex')
             ->add('slug');
     }
 
@@ -38,6 +39,7 @@ class ProductAdmin extends AbstractAdmin
     {
         $listMapper
             ->addIdentifier('title')
+            ->add('translations.noindex')
             ->add('slug');
     }
 }

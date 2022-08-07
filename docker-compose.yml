@@ -1,48 +1,42 @@
-application:
-    build: docker/application
-    volumes:
-        - ./:/var/www
-    tty: true
-
-data:
-    image: ubuntu:14.04
-    tty: true
-    volumes_from:
-        - application
-    volumes:
-        - ./docker/data/mysql:/var/lib/mysql
-
-mysql:
-    build: docker/mysql
+version: '3.9'
+services:
+  mysql:
+    image: mysql:5.7
     ports:
-        - 3306:3306
-    volumes_from:
-        - data
+      - 3306:3306
+    volumes:
+      - mysql:/var/lib/mysql
     environment:
-        MYSQL_DATABASE: nps
-        MYSQL_USER: root
-        MYSQL_PASSWORD: toor
-
-php:
-    build: docker/php7-fpm
+      MYSQL_DATABASE: nps
+      MYSQL_ROOT_PASSWORD: toor
+  
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+      target: dev
     environment:
-        XDEBUG_CONFIG: idekey=XDEBUG_PHPSTORM remote_host=172.17.0.1 remote_port=9001
-        PHP_IDE_CONFIG: serverName=npp-nps.local
+      XDEBUG_CONFIG: idekey=XDEBUG_PHPSTORM remote_host=172.17.0.1 remote_port=9001
+      PHP_IDE_CONFIG: serverName=npp-nps.local
     ports:
-        - 9000:9000
-    volumes_from:
-        - application
+      - 9000:9000
+    volumes:
+      - ./:/var/www
     links:
-        - mysql
+      - mysql
     tty: true
-
-nginx:
+  
+  nginx:
     build: docker/nginx
     ports:
-        - "80:80"
+      - "80:80"
     links:
-        - php
+      - php
     volumes_from:
-        - application
+      - php
     volumes:
-        - ./docker/logs/nginx/:/var/log/nginx
+      - ./docker/logs/nginx/:/var/log/nginx
+
+volumes:
+  php-sock:
+  mysql:

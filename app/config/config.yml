@@ -43,6 +43,7 @@ twig:
         isDev: "%isDev%"
         ga_account: "%ga_account%"
         hotjar_id: "%hotjar_id%"
+        site_url: "%site_url%"
 
 # Doctrine Configuration
 doctrine:
