@@ -26,3 +26,4 @@ parameters:
     isDev: ~
     ga_account: ~
     hotjar_id: ~
+    site_url: https://npp-nps.com
