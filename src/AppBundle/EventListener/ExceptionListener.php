@@ -50,15 +50,6 @@ class ExceptionListener
             if (isset($url)) {
                 $event->setResponse(new RedirectResponse($url, 301));
             }
-
-            $urlRedirect = new UrlRedirect();
-            $urlRedirect
-                ->setOldUrl($failedUrl)
-                ->setNewUrl(isset($url) ? $url : null)
-                ->setReferer($request->headers->get('referer'))
-            ;
-            $this->em->persist($urlRedirect);
-            $this->em->flush();
         }
     }
 }
