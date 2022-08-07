@@ -29,6 +29,23 @@
     <title>{% block title %}{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% set alternates = {
+        'en': 'https://npp-nps.com' ~ path(
+            app.request.attributes.get('_route')|default('app'),
+            app.request.attributes.get('_route_params')|default({})|merge({'_locale': 'en'})
+        ),
+        'ua': 'https://npp-nps.com' ~ path(
+            app.request.attributes.get('_route')|default('app'),
+            app.request.attributes.get('_route_params')|default({})|merge({'_locale': 'ua'})
+        ),
+        'ru': 'https://npp-nps.com' ~ path(
+            app.request.attributes.get('_route')|default('app'),
+            app.request.attributes.get('_route_params')|default({})|merge({'_locale': 'ru'})
+        ),
+    } -%}
+    <link rel="alternate" hreflang="en" href="{{ alternates['en'] }}">
+    <link rel="alternate" hreflang="ua" href="{{ alternates['ua'] }}">
+    <link rel="alternate" hreflang="ru" href="{{ alternates['ru'] }}">
     {% stylesheets
         'bundles/app/css/style-blue.css'
         'bundles/app/css/lightbox.css'
@@ -41,7 +58,7 @@
     {% endif -%}
 
     <script type="text/javascript">
-        var currentProductTitle = '{{ product|default('No meta set') }}';
+        var currentProductTitle = '{{ product|default(title) }}';
     </script>
 
     {% javascripts
