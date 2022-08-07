@@ -36,6 +36,10 @@
         <link rel="stylesheet" href="{{ asset_url }}">
     {% endstylesheets -%}
 
+    {% if product|default and product.currentTranslation.noindex -%}
+        <meta name="robots" content="noindex">
+    {% endif -%}
+
     <script type="text/javascript">
         var currentProductTitle = '{{ product|default('No meta set') }}';
     </script>

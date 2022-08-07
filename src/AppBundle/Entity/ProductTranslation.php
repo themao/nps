@@ -44,6 +44,12 @@ class ProductTranslation implements OneLocaleInterface
     private $metaDescription;
 
     /**
+     * @var bool
+     * @ORM\Column(name="noindex", type="boolean", nullable=false)
+     */
+    private $noindex = false;
+
+    /**
      * @return string
      */
     public function getTitle()
@@ -94,6 +100,24 @@ class ProductTranslation implements OneLocaleInterface
     public function setMetaDescription($metaDescription)
     {
         $this->metaDescription = $metaDescription;
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */ 
+    public function getNoindex()
+    {
+        return $this->noindex;
+    }
+
+    /**
+     * @param bool $noindex
+     * @return ProductTranslation
+     */ 
+    public function setNoindex(bool $noindex)
+    {
+        $this->noindex = $noindex;
         return $this;
     }
 }
