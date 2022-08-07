@@ -30,15 +30,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% set alternates = {
-        'en': 'https://npp-nps.com' ~ path(
+        'en': site_url ~ path(
             app.request.attributes.get('_route')|default('app'),
             app.request.attributes.get('_route_params')|default({})|merge({'_locale': 'en'})
         ),
-        'ua': 'https://npp-nps.com' ~ path(
+        'ua': site_url ~ path(
             app.request.attributes.get('_route')|default('app'),
             app.request.attributes.get('_route_params')|default({})|merge({'_locale': 'ua'})
         ),
-        'ru': 'https://npp-nps.com' ~ path(
+        'ru': site_url ~ path(
             app.request.attributes.get('_route')|default('app'),
             app.request.attributes.get('_route_params')|default({})|merge({'_locale': 'ru'})
         ),
@@ -55,6 +55,11 @@
 
     {% if product|default and product.currentTranslation.noindex -%}
         <meta name="robots" content="noindex">
+    {% endif -%}
+
+    {% if product|default and product.pictures.galleryHasMedias.count -%}
+        {% set thumbUrl = product.pictures.galleryHasMedias|filter(v => v.enabled)|first|default(product.pictures.galleryHasMedias|first) -%}
+        <meta name="thumbnail" content="{{ site_url }}{% path thumbUrl.media, 'small' %}">
     {% endif -%}
 
     <script type="text/javascript">
