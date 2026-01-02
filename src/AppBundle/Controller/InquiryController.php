@@ -54,6 +54,10 @@ class InquiryController extends Controller
             $inquiry->getText()
         );
 
+        if (strlen($inquiry->getText()) < 40 && (strpos($inquiry->getText(), ' ') === false || strpos($inquiry->getText(), ',') === false)) {
+            return new JsonResponse('Error', 400);
+        }
+
         try {
             $message = \Swift_Message::newInstance()
                 ->setSubject("Новий запит для {$inquiry->getProduct()}!")
