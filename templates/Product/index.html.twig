@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <article>
+        <h1>{{ product.title }}</h1>
+
+        <div class="product-content">
+            {% if content %}
+                {{ content|raw }}
+            {% endif %}
+        </div>
+
+        {% if product.pictures and product.pictures.galleryItems.count %}
+        <div class="gallery">
+            <p class="heading">{{ 'gallery.heading'|trans }}</p>
+            {% for picture in product.pictures.galleryItems %}
+                <a href="{{ sonata_path(picture.media, 'big') }}" data-lightbox="gallery" data-title="{{ product.title }}">
+                    <img src="{{ sonata_path(picture.media, 'small') }}" alt="{{ product.title }}">
+                </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="clear"></div>
+    </article>
+    {{ render(controller('App\\Controller\\InquiryController::indexAction', {'product': product})) }}
+{% endblock %}

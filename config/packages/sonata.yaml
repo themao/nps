@@ -1,0 +1,64 @@
+sonata_admin:
+    title: NPS
+
+sonata_block:
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+
+sonata_user:
+    class:
+        user: App\Entity\User
+    manager_type: orm
+    security_acl: false
+    resetting:
+        email:
+            address: '%env(FROM_EMAIL)%'
+            sender_name: NPS
+
+sonata_media:
+    class:
+        media: App\Entity\Media
+        gallery: App\Entity\Gallery
+        gallery_item: App\Entity\GalleryItem
+    db_driver: doctrine_orm
+    default_context: default
+    contexts:
+        default:
+            providers:
+                - sonata.media.provider.youtube
+                - sonata.media.provider.image
+                - sonata.media.provider.file
+                - sonata.media.provider.vimeo
+            formats:
+                small: { width: 100, quality: 70 }
+                big: { width: 500, quality: 70 }
+        page:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 200, quality: 70 }
+                big: { width: 1600, quality: 95 }
+        product:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 200, quality: 70 }
+                big: { width: 1600, quality: 95 }
+    cdn:
+        server:
+            path: /uploads/media
+    filesystem:
+        local:
+            directory: '%kernel.project_dir%/web/uploads/media'
+            create: false
+
+a2lix_translation_form:
+    locale_provider: default
+    locales: [en, ua, ru]
+    default_locale: en
+    templating: '@A2lixTranslationForm/bootstrap_3_layout.html.twig'
+
+knp_menu:
+    twig:
+        template: '@KnpMenu/menu.html.twig'

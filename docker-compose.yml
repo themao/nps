@@ -1,4 +1,3 @@
-version: '3.9'
 services:
   mysql:
     image: mysql:5.7
@@ -9,34 +8,31 @@ services:
     environment:
       MYSQL_DATABASE: nps
       MYSQL_ROOT_PASSWORD: toor
-  
+
   php:
     build:
       context: .
       dockerfile: docker/php/Dockerfile
       target: dev
     environment:
-      XDEBUG_CONFIG: idekey=XDEBUG_PHPSTORM remote_host=172.17.0.1 remote_port=9001
+      APP_ENV: dev
+      DATABASE_URL: mysql://root:toor@mysql:3306/nps?serverVersion=5.7.44&charset=utf8
       PHP_IDE_CONFIG: serverName=npp-nps.local
-    ports:
-      - 9000:9000
+    extra_hosts:
+      - host.docker.internal:host-gateway
     volumes:
       - ./:/var/www
-    links:
+    depends_on:
       - mysql
-    tty: true
-  
+
   nginx:
     build: docker/nginx
     ports:
       - "80:80"
-    links:
-      - php
-    volumes_from:
+    depends_on:
       - php
     volumes:
-      - ./docker/logs/nginx/:/var/log/nginx
+      - ./web:/var/www/web:ro
 
 volumes:
-  php-sock:
   mysql:

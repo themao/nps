@@ -1,0 +1,55 @@
+admin_area:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+sonata_user_admin_security:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+
+sonata_user_admin_resetting:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_resetting.xml'
+    prefix: /admin/resetting
+
+media:
+    resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
+    prefix: /media
+
+privacy_policy:
+    path: /{_locale}/privacy-policy
+    controller: App\Controller\DefaultController::privacyPolicyAction
+
+app:
+    path: /{_locale}/{path}
+    controller: App\Controller\DefaultController::indexAction
+    defaults:
+        path: ''
+    requirements:
+        _locale: en|ru|ua
+
+app_default:
+    path: /{path}
+    controller: App\Controller\DefaultController::indexAction
+    defaults:
+        path: ''
+
+products:
+    path: /{_locale}/products/{slug}
+    controller: App\Controller\ProductController::indexAction
+    defaults:
+        slug: ''
+
+app_locale:
+    path: /{_locale}
+    controller: App\Controller\DefaultController::localeAction
+    requirements:
+        _locale: en|ru|ua
+
+inquiry:
+    path: /inquiry/send
+    controller: App\Controller\InquiryController::sendAction
+    methods: [POST]

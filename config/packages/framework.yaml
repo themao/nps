@@ -1,0 +1,37 @@
+framework:
+    secret: '%env(APP_SECRET)%'
+    default_locale: en
+    translator:
+        default_path: '%kernel.project_dir%/translations'
+        fallbacks: ['en']
+    http_method_override: true
+    handle_all_throwables: true
+    form: ~
+    csrf_protection: ~
+    validation:
+        enable_attributes: true
+        email_validation_mode: html5
+    assets: ~
+    router:
+        utf8: true
+    session:
+        handler_id: session.handler.native_file
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+        cookie_secure: auto
+        cookie_samesite: lax
+    php_errors:
+        log: true
+    mailer:
+        dsn: '%env(MAILER_DSN)%'
+
+when@dev:
+    framework:
+        router:
+            strict_requirements: true
+        profiler: { only_exceptions: false }
+
+when@test:
+    framework:
+        test: true
+        session:
+            storage_factory_id: session.storage.factory.mock_file

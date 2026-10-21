@@ -1,0 +1,15 @@
+.git
+.idea
+.vscode
+.env.local
+.env.*.local
+app
+var
+vendor
+web/bundles
+web/uploads
+web/css
+web/js
+docker/data
+docker/logs
+nps.sql

@@ -1,0 +1,8 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    strict_variables: '%kernel.debug%'
+    globals:
+        isDev: '%env(bool:IS_DEV)%'
+        ga_account: '%env(GA_ACCOUNT)%'
+        hotjar_id: '%env(HOTJAR_ID)%'
+        site_url: '%env(SITE_URL)%'
